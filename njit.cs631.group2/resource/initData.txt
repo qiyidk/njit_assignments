@@ -1,0 +1,22 @@
+Insert into L_USER values
+     ("U0001", "ADMIN", "ADMINISTRATOR", "NJIT", "admin"),
+     ("U0002", "STUDENT", "Sherry", "NJIT", null),
+     ("U0003", "STUDENT", "Wenbin", "NJIT", null),
+     ("U0004", "SENIOR_CITIZEN", "Bill", "Rutgers", null),
+     ("U0005", "STAFF", "John", "Rutgers", null),
+     ("U0006", "STAFF", "Lily", "Rutgers", null);
+     
+Insert into BRANCH values
+    ("B01", "BRANCH1", "NEW JERSEY"),
+    ("B02", "BRANCH2", "NEW YORK"),
+    ("B03", "BRANCH3", "LONDON"),
+    ("B04", "BRANCH4", "BEIJING"),
+    ("B05", "BRANCH5", "BOSTON");
+
+Insert into CHIEF_EDITOR values
+    ("CE01", "John Smith"),
+    ("CE02", "Bill Gates"),
+    ("CE03", "Yi Qi"),
+    ("CE04", "Sherry Hou"),
+    ("CE05", "Wenbin Ma");
+    

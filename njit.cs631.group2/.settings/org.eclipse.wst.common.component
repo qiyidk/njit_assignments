@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="njit.cs631.group2">
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/WEB-INF/resourse" source-path="/resource"/>
+        <wb-resource deploy-path="/WEB-INF/lib" source-path="/lib"/>
+        <wb-resource deploy-path="/" source-path="/WebContent"/>
+        <property name="context-root" value="njit.cs631.group2"/>
+        <property name="java-output-path" value="/njit.cs631.group2/build/classes"/>
+    </wb-module>
+</project-modules>
