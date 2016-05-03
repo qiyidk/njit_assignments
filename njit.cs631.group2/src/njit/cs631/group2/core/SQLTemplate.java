@@ -97,6 +97,7 @@ public class SQLTemplate {
             sb.append("),");
         }
         sb.deleteCharAt(sb.length() - 1);//delete the last ","
+        sb.append(";");
         return sb.toString();
     }
     
@@ -156,6 +157,7 @@ public class SQLTemplate {
             if (!isAsc) sb.append(" ").append("desc");
         }
         if (rsCapacity != -1) sb.append("Limit " + rsCapacity);
+        sb.append(";");
         return sb.toString();
     }
     
@@ -206,7 +208,7 @@ public class SQLTemplate {
             sb.delete(sb.length() - 5, sb.length() - 1);
             
         }
-        
+        sb.append(";");
         return sb.toString();
     }
 
