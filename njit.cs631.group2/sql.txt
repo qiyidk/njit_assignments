@@ -1,3 +1,32 @@
+set foreign_key_checks = 0;
+Insert into READER values
+     ("1", "admin", "ADMINISTRATOR", "", "NJIT", "123"),
+     ("2", "student", "Sherry", "", "NJIT", "123"),
+     ("3", "student", "Wenbin", "", "NJIT", "123"),
+     ("4", "senior_citizen", "Bill", "", "Rutgers", "123"),
+     ("5", "staff", "John", "", "Rutgers", "123"),
+     ("6", "student", "Lily1", "", "Rutgers", "123"),
+     ("7", "student", "Lily2", "", "Rutgers", "123"),
+     ("8", "student", "Lily3", "", "Rutgers", "123"),
+     ("9", "student", "Lily4", "", "Rutgers", "123"),
+     ("10", "student", "Lily5", "", "Rutgers", "123"),
+     ("11", "student", "Lily6", "", "Rutgers", "123"),
+     ("12", "student", "Lily7", "", "Rutgers", "123"),
+     ("13", "student", "Lily8", "", "Rutgers", "123"),
+     ("14", "student", "Lily9", "", "Rutgers", "123"),
+     ("15", "student", "Lily10", "", "Rutgers", "123"),
+     ("16", "student", "Lily11", "", "Rutgers", "123"),
+     ("17", "student", "Lily12", "", "Rutgers", "123"),
+     ("18", "student", "Lily13", "", "Rutgers", "123"),
+     ("19", "student", "Lily14", "", "Rutgers", "123"),
+     ("20", "student", "Lily15", "", "Rutgers", "123");
+     
+Insert into BRANCH values
+    ("1", "BRANCH1", "NEW JERSEY"),
+    ("2", "BRANCH2", "NEW YORK"),
+    ("3", "BRANCH3", "LONDON"),
+    ("4", "BRANCH4", "BEIJING"),
+    ("5", "BRANCH5", "BOSTON");
 INSERT INTO Publisher VALUES
 ("10000","Oxford University Press","111 Passiac Ave");
 INSERT INTO Author VALUES
@@ -10,6 +39,8 @@ INSERT INTO JOURNAL_ISSUE VALUES
 ("1","1","Artificial Intelligence"),("1","2","Datebase Performance"),("1","3","Data Mining"),("1","4","Cloud Computing");
 INSERT INTO INV_EDITOR VALUES
 ("1","1","John Smith"),("1","2","Sherry Hou"),("1","3","Wenbin Ma"),("1","4","Yi Qi");
+INSERT INTO BORROWS VALUES
+("10000","4","1","2","1","2015-1-1","2016-2-2");
 INSERT INTO DOCUMENT VALUES
 ("1","Classical Mythology","2002-1-1","10000");
 INSERT INTO COPY VALUES
@@ -19,7 +50,9 @@ INSERT INTO Publisher VALUES
 INSERT INTO Author VALUES
 ("10001","Richard Bruce Wright");
 INSERT INTO PROCEEDINGS VALUES
-("2","2000-1-1","122 Golden Street","Richard Bruce Wright");
+("2","2015-1-1","122 Golden Street","Richard Bruce Wright");
+INSERT INTO BORROWS VALUES
+("10001","4","2","3","1","2015-1-1","2016-2-2");
 INSERT INTO DOCUMENT VALUES
 ("2","Clara Callan","2001-1-1","10001");
 INSERT INTO COPY VALUES
@@ -33,7 +66,7 @@ INSERT INTO BOOK VALUES
 INSERT INTO WRITES VALUES
 ("10002","3");
 INSERT INTO BORROWS VALUES
-("10000","4","3","1","1","2000-1-1","2000-2-3"),("10001","4","3","2","2","2000-1-1","2000-2-3"),("10002","5","3","3","3","2000-1-1","2000-2-3"),("10003","2","3","5","3","2000-1-1","2000-1-1");
+("10002","4","3","4","1","2015-1-1","2016-2-2"),("10003","5","3","4","2","2015-1-1","2016-2-2"),("10004","6","3","4","3","2015-1-1","2016-2-2"),("10005","4","3","4","1","2015-1-1","2016-2-2");
 INSERT INTO DOCUMENT VALUES
 ("3","Decision in Normandy","1991-1-1","10002");
 INSERT INTO COPY VALUES
@@ -50,6 +83,8 @@ INSERT INTO JOURNAL_ISSUE VALUES
 ("4","1","Artificial Intelligence"),("4","2","Datebase Performance"),("4","3","Data Mining"),("4","4","Cloud Computing");
 INSERT INTO INV_EDITOR VALUES
 ("4","1","John Smith"),("4","2","Sherry Hou"),("4","3","Wenbin Ma"),("4","4","Yi Qi");
+INSERT INTO BORROWS VALUES
+("10006","4","4","5","1","2015-1-2","2016-2-3");
 INSERT INTO DOCUMENT VALUES
 ("4","Flu: The Story of the Great Influenza Pandemic of 1918 and the Search for the Virus That Caused It","1999-1-1","10003");
 INSERT INTO COPY VALUES
@@ -59,7 +94,9 @@ INSERT INTO Publisher VALUES
 INSERT INTO Author VALUES
 ("10004","E. J. W. Barber");
 INSERT INTO PROCEEDINGS VALUES
-("5","2000-1-2","225 Dragon Ave","E. J. W. Barber");
+("5","2015-1-2","225 Dragon Ave","E. J. W. Barber");
+INSERT INTO BORROWS VALUES
+("10007","6","5","1","3","2016-2-3","2016-3-4"),("10008","8","5","1","1","2016-2-3","2016-3-4"),("10009","10","5","1","2","2016-2-3","2016-3-4"),("10010","4","5","1","1","2015-1-2","2016-2-3");
 INSERT INTO DOCUMENT VALUES
 ("5","The Mummies of Urumchi","1999-1-1","10004");
 INSERT INTO COPY VALUES
@@ -73,7 +110,7 @@ INSERT INTO BOOK VALUES
 INSERT INTO WRITES VALUES
 ("10005","6");
 INSERT INTO BORROWS VALUES
-("10004","7","6","1","1","2000-1-2","2000-2-4"),("10005","7","6","2","2","2000-1-2","2000-2-4"),("10006","5","6","3","3","2000-1-2","2000-2-4"),("10007","2","6","5","3","2000-1-2","2000-1-2");
+("10011","7","6","2","1","2015-1-2","2016-2-3"),("10012","8","6","2","2","2015-1-2","2016-2-3"),("10013","9","6","2","3","2015-1-2","2016-2-3"),("10014","4","6","2","1","2015-1-2","2016-2-3");
 INSERT INTO DOCUMENT VALUES
 ("6","The Kitchen God's Wife","1991-1-1","10005");
 INSERT INTO COPY VALUES
@@ -90,6 +127,8 @@ INSERT INTO JOURNAL_ISSUE VALUES
 ("7","1","Artificial Intelligence"),("7","2","Datebase Performance"),("7","3","Data Mining"),("7","4","Cloud Computing");
 INSERT INTO INV_EDITOR VALUES
 ("7","1","John Smith"),("7","2","Sherry Hou"),("7","3","Wenbin Ma"),("7","4","Yi Qi");
+INSERT INTO BORROWS VALUES
+("10015","4","7","3","1","2015-1-2","2016-2-3");
 INSERT INTO DOCUMENT VALUES
 ("7","What If?: The World's Foremost Military Historians Imagine What Might Have Been","2000-1-1","10006");
 INSERT INTO COPY VALUES
@@ -99,7 +138,9 @@ INSERT INTO Publisher VALUES
 INSERT INTO Author VALUES
 ("10007","Scott Turow");
 INSERT INTO PROCEEDINGS VALUES
-("8","2000-1-3","128 Golden Street","Scott Turow");
+("8","2015-1-3","128 Golden Street","Scott Turow");
+INSERT INTO BORROWS VALUES
+("10016","4","8","4","1","2015-1-3","2016-2-4");
 INSERT INTO DOCUMENT VALUES
 ("8","PLEADING GUILTY","1993-1-1","10007");
 INSERT INTO COPY VALUES
@@ -113,7 +154,7 @@ INSERT INTO BOOK VALUES
 INSERT INTO WRITES VALUES
 ("10008","9");
 INSERT INTO BORROWS VALUES
-("10008","10","9","1","1","2000-1-3","2000-2-5"),("10009","3","9","2","2","2000-1-3","2000-2-5"),("10010","5","9","3","3","2000-1-3","2000-2-5"),("10011","2","9","5","3","2000-1-3","2000-1-3");
+("10017","10","9","5","1","2015-1-3","2016-2-4"),("10018","11","9","5","2","2015-1-3","2016-2-4"),("10019","12","9","5","3","2015-1-3","2016-2-4"),("10020","4","9","5","1","2015-1-3","2016-2-4");
 INSERT INTO DOCUMENT VALUES
 ("9","Under the Black Flag: The Romance and the Reality of Life Among the Pirates","1996-1-1","10008");
 INSERT INTO COPY VALUES
@@ -130,6 +171,8 @@ INSERT INTO JOURNAL_ISSUE VALUES
 ("10","1","Artificial Intelligence"),("10","2","Datebase Performance"),("10","3","Data Mining"),("10","4","Cloud Computing");
 INSERT INTO INV_EDITOR VALUES
 ("10","1","John Smith"),("10","2","Sherry Hou"),("10","3","Wenbin Ma"),("10","4","Yi Qi");
+INSERT INTO BORROWS VALUES
+("10021","11","10","1","2","2016-3-4","2016-4-5"),("10022","13","10","1","3","2016-3-4","2016-4-5"),("10023","15","10","1","1","2016-3-4","2016-4-5"),("10024","4","10","1","1","2015-2-3","2016-3-4");
 INSERT INTO DOCUMENT VALUES
 ("10","Where You'll Find Me: And Other Stories","2002-1-1","10009");
 INSERT INTO COPY VALUES
@@ -139,7 +182,9 @@ INSERT INTO Publisher VALUES
 INSERT INTO Author VALUES
 ("10010","David Adams Richards");
 INSERT INTO PROCEEDINGS VALUES
-("11","2001-2-3","231 Dragon Ave","David Adams Richards");
+("11","2015-2-3","231 Dragon Ave","David Adams Richards");
+INSERT INTO BORROWS VALUES
+("10025","13","11","2","3","2016-3-4","2016-4-5"),("10026","15","11","2","1","2016-3-4","2016-4-5"),("10027","17","11","2","2","2016-3-4","2016-4-5"),("10028","4","11","2","1","2015-2-3","2016-3-4");
 INSERT INTO DOCUMENT VALUES
 ("11","Nights Below Station Street","1988-1-1","10010");
 INSERT INTO COPY VALUES
@@ -153,7 +198,7 @@ INSERT INTO BOOK VALUES
 INSERT INTO WRITES VALUES
 ("10011","12");
 INSERT INTO BORROWS VALUES
-("10012","13","12","1","1","2001-2-4","2001-3-6"),("10013","6","12","2","2","2001-2-4","2001-3-6"),("10014","5","12","3","3","2001-2-4","2001-3-6"),("10015","2","12","5","3","2001-2-4","2001-2-4");
+("10029","13","12","3","1","2015-2-4","2016-3-5"),("10030","14","12","3","2","2015-2-4","2016-3-5"),("10031","15","12","3","3","2015-2-4","2016-3-5"),("10032","4","12","3","1","2015-2-4","2016-3-5");
 INSERT INTO DOCUMENT VALUES
 ("12","Hitler's Secret Bankers: The Myth of Swiss Neutrality During the Holocaust","2000-1-1","10011");
 INSERT INTO COPY VALUES
@@ -170,6 +215,8 @@ INSERT INTO JOURNAL_ISSUE VALUES
 ("13","1","Artificial Intelligence"),("13","2","Datebase Performance"),("13","3","Data Mining"),("13","4","Cloud Computing");
 INSERT INTO INV_EDITOR VALUES
 ("13","1","John Smith"),("13","2","Sherry Hou"),("13","3","Wenbin Ma"),("13","4","Yi Qi");
+INSERT INTO BORROWS VALUES
+("10033","4","13","4","1","2015-2-4","2016-3-5");
 INSERT INTO DOCUMENT VALUES
 ("13","The Middle Stories","2004-1-1","10012");
 INSERT INTO COPY VALUES
@@ -179,7 +226,9 @@ INSERT INTO Publisher VALUES
 INSERT INTO Author VALUES
 ("10013","R. J. Kaiser");
 INSERT INTO PROCEEDINGS VALUES
-("14","2001-2-4","134 Golden Street","R. J. Kaiser");
+("14","2015-2-4","134 Golden Street","R. J. Kaiser");
+INSERT INTO BORROWS VALUES
+("10034","4","14","5","1","2015-2-4","2016-3-5");
 INSERT INTO DOCUMENT VALUES
 ("14","Jane Doe","1999-1-1","10013");
 INSERT INTO COPY VALUES
@@ -193,7 +242,7 @@ INSERT INTO BOOK VALUES
 INSERT INTO WRITES VALUES
 ("10014","15");
 INSERT INTO BORROWS VALUES
-("10016","16","15","1","1","2001-2-4","2001-3-6"),("10017","2","15","2","2","2001-2-4","2001-3-6"),("10018","5","15","3","3","2001-2-4","2001-3-6"),("10019","2","15","5","3","2001-2-4","2001-2-4");
+("10035","16","15","1","1","2015-2-4","2016-3-5"),("10036","17","15","1","2","2015-2-4","2016-3-5"),("10037","18","15","1","3","2015-2-4","2016-3-5"),("10038","16","15","1","1","2016-3-5","2016-4-6"),("10039","18","15","1","2","2016-3-5","2016-4-6"),("10040","0","15","1","3","2016-3-5","2016-4-6"),("10041","4","15","1","1","2015-2-4","2016-3-5");
 INSERT INTO DOCUMENT VALUES
 ("15","A Second Chicken Soup for the Woman's Soul (Chicken Soup for the Soul Series)","1998-1-1","10014");
 INSERT INTO COPY VALUES
@@ -210,6 +259,8 @@ INSERT INTO JOURNAL_ISSUE VALUES
 ("16","1","Artificial Intelligence"),("16","2","Datebase Performance"),("16","3","Data Mining"),("16","4","Cloud Computing");
 INSERT INTO INV_EDITOR VALUES
 ("16","1","John Smith"),("16","2","Sherry Hou"),("16","3","Wenbin Ma"),("16","4","Yi Qi");
+INSERT INTO BORROWS VALUES
+("10042","4","16","2","1","2015-2-5","2016-3-6");
 INSERT INTO DOCUMENT VALUES
 ("16","The Witchfinder (Amos Walker Mystery Series)","1998-1-1","10015");
 INSERT INTO COPY VALUES
@@ -219,7 +270,9 @@ INSERT INTO Publisher VALUES
 INSERT INTO Author VALUES
 ("10016","Robert Hendrickson");
 INSERT INTO PROCEEDINGS VALUES
-("17","2001-2-5","237 Dragon Ave","Robert Hendrickson");
+("17","2015-2-5","237 Dragon Ave","Robert Hendrickson");
+INSERT INTO BORROWS VALUES
+("10043","4","17","3","1","2015-2-5","2016-3-6");
 INSERT INTO DOCUMENT VALUES
 ("17","More Cunning Than Man: A Social History of Rats and Man","1999-1-1","10016");
 INSERT INTO COPY VALUES
@@ -233,7 +286,7 @@ INSERT INTO BOOK VALUES
 INSERT INTO WRITES VALUES
 ("10017","18");
 INSERT INTO BORROWS VALUES
-("10020","19","18","1","1","2001-2-5","2001-3-7"),("10021","5","18","2","2","2001-2-5","2001-3-7"),("10022","5","18","3","3","2001-2-5","2001-3-7"),("10023","2","18","5","3","2001-2-5","2001-2-5");
+("10044","19","18","4","1","2015-2-5","2016-3-6"),("10045","0","18","4","2","2015-2-5","2016-3-6"),("10046","1","18","4","3","2015-2-5","2016-3-6"),("10047","4","18","4","1","2015-2-5","2016-3-6");
 INSERT INTO DOCUMENT VALUES
 ("18","Goodbye to the Buttermilk Sky","1994-1-1","10017");
 INSERT INTO COPY VALUES
@@ -250,6 +303,8 @@ INSERT INTO JOURNAL_ISSUE VALUES
 ("19","1","Artificial Intelligence"),("19","2","Datebase Performance"),("19","3","Data Mining"),("19","4","Cloud Computing");
 INSERT INTO INV_EDITOR VALUES
 ("19","1","John Smith"),("19","2","Sherry Hou"),("19","3","Wenbin Ma"),("19","4","Yi Qi");
+INSERT INTO BORROWS VALUES
+("10048","4","19","5","1","2015-2-5","2016-3-6");
 INSERT INTO DOCUMENT VALUES
 ("19","The Testament","1999-1-1","10018");
 INSERT INTO COPY VALUES
@@ -259,7 +314,9 @@ INSERT INTO Publisher VALUES
 INSERT INTO Author VALUES
 ("10019","Toni Morrison");
 INSERT INTO PROCEEDINGS VALUES
-("20","2002-3-6","140 Golden Street","Toni Morrison");
+("20","2015-3-6","140 Golden Street","Toni Morrison");
+INSERT INTO BORROWS VALUES
+("10049","1","20","1","3","2016-4-7","2016-5-8"),("10050","3","20","1","1","2016-4-7","2016-5-8"),("10051","5","20","1","2","2016-4-7","2016-5-8"),("10052","4","20","1","1","2015-3-6","2016-4-7");
 INSERT INTO DOCUMENT VALUES
 ("20","Beloved (Plume Contemporary Fiction)","1994-1-1","10019");
 INSERT INTO COPY VALUES
@@ -273,7 +330,7 @@ INSERT INTO BOOK VALUES
 INSERT INTO WRITES VALUES
 ("10020","21");
 INSERT INTO BORROWS VALUES
-("10024","2","21","1","1","2002-3-6","2002-4-8"),("10025","1","21","2","2","2002-3-6","2002-4-8"),("10026","5","21","3","3","2002-3-6","2002-4-8"),("10027","2","21","5","3","2002-3-6","2002-3-6");
+("10053","2","21","2","1","2015-3-6","2016-4-7"),("10054","3","21","2","2","2015-3-6","2016-4-7"),("10055","4","21","2","3","2015-3-6","2016-4-7"),("10056","4","21","2","1","2015-3-6","2016-4-7");
 INSERT INTO DOCUMENT VALUES
 ("21","Our Dumb Century: The Onion Presents 100 Years of Headlines from America's Finest News Source","1999-1-1","10020");
 INSERT INTO COPY VALUES
@@ -290,6 +347,8 @@ INSERT INTO JOURNAL_ISSUE VALUES
 ("22","1","Artificial Intelligence"),("22","2","Datebase Performance"),("22","3","Data Mining"),("22","4","Cloud Computing");
 INSERT INTO INV_EDITOR VALUES
 ("22","1","John Smith"),("22","2","Sherry Hou"),("22","3","Wenbin Ma"),("22","4","Yi Qi");
+INSERT INTO BORROWS VALUES
+("10057","4","22","3","2","2016-4-7","2016-5-8"),("10058","6","22","3","3","2016-4-7","2016-5-8"),("10059","8","22","3","1","2016-4-7","2016-5-8"),("10060","4","22","3","1","2015-3-6","2016-4-7");
 INSERT INTO DOCUMENT VALUES
 ("22","New Vegetarian: Bold and Beautiful Recipes for Every Occasion","2001-1-1","10021");
 INSERT INTO COPY VALUES
@@ -299,7 +358,9 @@ INSERT INTO Publisher VALUES
 INSERT INTO Author VALUES
 ("10022","J. R. Parrish");
 INSERT INTO PROCEEDINGS VALUES
-("23","2002-3-6","243 Dragon Ave","J. R. Parrish");
+("23","2015-3-6","243 Dragon Ave","J. R. Parrish");
+INSERT INTO BORROWS VALUES
+("10061","4","23","4","1","2015-3-6","2016-4-7");
 INSERT INTO DOCUMENT VALUES
 ("23","If I'd Known Then What I Know Now: Why Not Learn from the Mistakes of Others? : You Can't Afford to Make Them All Yourself","2003-1-1","10022");
 INSERT INTO COPY VALUES
@@ -313,7 +374,7 @@ INSERT INTO BOOK VALUES
 INSERT INTO WRITES VALUES
 ("10023","24");
 INSERT INTO BORROWS VALUES
-("10028","5","24","1","1","2002-3-7","2002-4-9"),("10029","4","24","2","2","2002-3-7","2002-4-9"),("10030","5","24","3","3","2002-3-7","2002-4-9"),("10031","2","24","5","3","2002-3-7","2002-3-7");
+("10062","5","24","5","1","2015-3-7","2016-4-8"),("10063","6","24","5","2","2015-3-7","2016-4-8"),("10064","7","24","5","3","2015-3-7","2016-4-8"),("10065","4","24","5","1","2015-3-7","2016-4-8");
 INSERT INTO DOCUMENT VALUES
 ("24","Mary-Kate  Ashley Switching Goals (Mary-Kate and Ashley Starring in)","2000-1-1","10023");
 INSERT INTO COPY VALUES
@@ -330,6 +391,8 @@ INSERT INTO JOURNAL_ISSUE VALUES
 ("25","1","Artificial Intelligence"),("25","2","Datebase Performance"),("25","3","Data Mining"),("25","4","Cloud Computing");
 INSERT INTO INV_EDITOR VALUES
 ("25","1","John Smith"),("25","2","Sherry Hou"),("25","3","Wenbin Ma"),("25","4","Yi Qi");
+INSERT INTO BORROWS VALUES
+("10066","6","25","1","2","2016-4-8","2016-5-9"),("10067","8","25","1","3","2016-4-8","2016-5-9"),("10068","10","25","1","1","2016-4-8","2016-5-9"),("10069","4","25","1","1","2015-3-7","2016-4-8");
 INSERT INTO DOCUMENT VALUES
 ("25","Tell Me This Isn't Happening","1999-1-1","10024");
 INSERT INTO COPY VALUES
@@ -339,7 +402,9 @@ INSERT INTO Publisher VALUES
 INSERT INTO Author VALUES
 ("10025","Kathleen Duey");
 INSERT INTO PROCEEDINGS VALUES
-("26","2002-3-7","146 Golden Street","Kathleen Duey");
+("26","2015-3-7","146 Golden Street","Kathleen Duey");
+INSERT INTO BORROWS VALUES
+("10070","4","26","2","1","2015-3-7","2016-4-8");
 INSERT INTO DOCUMENT VALUES
 ("26","Flood : Mississippi 1927","1998-1-1","10025");
 INSERT INTO COPY VALUES
@@ -353,7 +418,7 @@ INSERT INTO BOOK VALUES
 INSERT INTO WRITES VALUES
 ("10026","27");
 INSERT INTO BORROWS VALUES
-("10032","8","27","1","1","2002-3-7","2002-4-9"),("10033","7","27","2","2","2002-3-7","2002-4-9"),("10034","5","27","3","3","2002-3-7","2002-4-9"),("10035","2","27","5","3","2002-3-7","2002-3-7");
+("10071","8","27","3","1","2015-3-7","2016-4-8"),("10072","9","27","3","2","2015-3-7","2016-4-8"),("10073","10","27","3","3","2015-3-7","2016-4-8"),("10074","4","27","3","1","2015-3-7","2016-4-8");
 INSERT INTO DOCUMENT VALUES
 ("27","Wild Animus","2004-1-1","10026");
 INSERT INTO COPY VALUES
@@ -370,6 +435,8 @@ INSERT INTO JOURNAL_ISSUE VALUES
 ("28","1","Artificial Intelligence"),("28","2","Datebase Performance"),("28","3","Data Mining"),("28","4","Cloud Computing");
 INSERT INTO INV_EDITOR VALUES
 ("28","1","John Smith"),("28","2","Sherry Hou"),("28","3","Wenbin Ma"),("28","4","Yi Qi");
+INSERT INTO BORROWS VALUES
+("10075","4","28","4","1","2015-3-8","2016-4-9");
 INSERT INTO DOCUMENT VALUES
 ("28","Airframe","1997-1-1","10027");
 INSERT INTO COPY VALUES
@@ -377,7 +444,9 @@ INSERT INTO COPY VALUES
 INSERT INTO Author VALUES
 ("10028","MICHAEL CRICHTON");
 INSERT INTO PROCEEDINGS VALUES
-("29","2002-3-8","249 Dragon Ave","MICHAEL CRICHTON");
+("29","2015-3-8","249 Dragon Ave","MICHAEL CRICHTON");
+INSERT INTO BORROWS VALUES
+("10076","4","29","5","1","2015-3-8","2016-4-9");
 INSERT INTO DOCUMENT VALUES
 ("29","Timeline","2000-1-1","10027");
 INSERT INTO COPY VALUES
@@ -389,7 +458,7 @@ INSERT INTO BOOK VALUES
 INSERT INTO WRITES VALUES
 ("10029","30");
 INSERT INTO BORROWS VALUES
-("10036","11","30","1","1","2003-4-8","2003-5-10"),("10037","3","30","2","2","2003-4-8","2003-5-10"),("10038","5","30","3","3","2003-4-8","2003-5-10"),("10039","2","30","5","3","2003-4-8","2003-4-8");
+("10077","11","30","1","1","2015-4-8","2016-5-9"),("10078","12","30","1","2","2015-4-8","2016-5-9"),("10079","13","30","1","3","2015-4-8","2016-5-9"),("10080","11","30","1","1","2016-5-9","2016-6-10"),("10081","13","30","1","2","2016-5-9","2016-6-10"),("10082","15","30","1","3","2016-5-9","2016-6-10"),("10083","4","30","1","1","2015-4-8","2016-5-9");
 INSERT INTO DOCUMENT VALUES
 ("30","OUT OF THE SILENT PLANET","1996-1-1","10009");
 INSERT INTO COPY VALUES
@@ -406,6 +475,8 @@ INSERT INTO JOURNAL_ISSUE VALUES
 ("31","1","Artificial Intelligence"),("31","2","Datebase Performance"),("31","3","Data Mining"),("31","4","Cloud Computing");
 INSERT INTO INV_EDITOR VALUES
 ("31","1","John Smith"),("31","2","Sherry Hou"),("31","3","Wenbin Ma"),("31","4","Yi Qi");
+INSERT INTO BORROWS VALUES
+("10084","4","31","2","1","2015-4-8","2016-5-9");
 INSERT INTO DOCUMENT VALUES
 ("31","Prague : A Novel","2003-1-1","10028");
 INSERT INTO COPY VALUES
@@ -413,7 +484,9 @@ INSERT INTO COPY VALUES
 INSERT INTO Author VALUES
 ("10031","Stephan Jaramillo");
 INSERT INTO PROCEEDINGS VALUES
-("32","2003-4-9","152 Golden Street","Stephan Jaramillo");
+("32","2015-4-9","152 Golden Street","Stephan Jaramillo");
+INSERT INTO BORROWS VALUES
+("10085","4","32","3","1","2015-4-9","2016-5-10");
 INSERT INTO DOCUMENT VALUES
 ("32","Chocolate Jesus","1998-1-1","10006");
 INSERT INTO COPY VALUES
@@ -427,7 +500,7 @@ INSERT INTO BOOK VALUES
 INSERT INTO WRITES VALUES
 ("10032","33");
 INSERT INTO BORROWS VALUES
-("10040","14","33","1","1","2003-4-9","2003-5-11"),("10041","6","33","2","2","2003-4-9","2003-5-11"),("10042","5","33","3","3","2003-4-9","2003-5-11"),("10043","2","33","4","1","2003-4-9","2003-5-11"),("10044","2","33","5","2","2003-4-9","2003-5-11"),("10045","3","33","5","1","2003-4-9","2003-5-11"),("10046","2","33","5","3","2003-4-9","2003-4-9");
+("10086","14","33","4","1","2015-4-9","2016-5-10"),("10087","15","33","4","2","2015-4-9","2016-5-10"),("10088","16","33","4","3","2015-4-9","2016-5-10"),("10089","15","33","4","1","2016-5-10","2016-6-11"),("10090","17","33","4","2","2016-5-10","2016-6-11"),("10091","19","33","4","3","2016-5-10","2016-6-11"),("10092","4","33","4","1","2015-4-9","2016-5-10");
 INSERT INTO DOCUMENT VALUES
 ("33","Wie Barney es sieht.","2002-1-1","10029");
 INSERT INTO COPY VALUES
@@ -444,6 +517,8 @@ INSERT INTO JOURNAL_ISSUE VALUES
 ("34","1","Artificial Intelligence"),("34","2","Datebase Performance"),("34","3","Data Mining"),("34","4","Cloud Computing");
 INSERT INTO INV_EDITOR VALUES
 ("34","1","John Smith"),("34","2","Sherry Hou"),("34","3","Wenbin Ma"),("34","4","Yi Qi");
+INSERT INTO BORROWS VALUES
+("10093","4","34","5","1","2015-4-9","2016-5-10");
 INSERT INTO DOCUMENT VALUES
 ("34","Der Fluch der Kaiserin. Ein Richter- Di- Roman.","2001-1-1","10030");
 INSERT INTO COPY VALUES
@@ -451,7 +526,9 @@ INSERT INTO COPY VALUES
 INSERT INTO Author VALUES
 ("10034","Charlotte Link");
 INSERT INTO PROCEEDINGS VALUES
-("35","2003-4-9","255 Dragon Ave","Charlotte Link");
+("35","2015-4-9","255 Dragon Ave","Charlotte Link");
+INSERT INTO BORROWS VALUES
+("10094","16","35","1","3","2016-5-10","2016-6-11"),("10095","18","35","1","1","2016-5-10","2016-6-11"),("10096","0","35","1","2","2016-5-10","2016-6-11"),("10097","4","35","1","1","2015-4-9","2016-5-10");
 INSERT INTO DOCUMENT VALUES
 ("35","Sturmzeit. Roman.","1991-1-1","10030");
 INSERT INTO COPY VALUES
@@ -463,7 +540,7 @@ INSERT INTO BOOK VALUES
 INSERT INTO WRITES VALUES
 ("10035","36");
 INSERT INTO BORROWS VALUES
-("10047","17","36","1","1","2003-4-10","2003-5-12"),("10048","2","36","2","2","2003-4-10","2003-5-12"),("10049","5","36","3","3","2003-4-10","2003-5-12"),("10050","2","36","5","3","2003-4-10","2003-4-10");
+("10098","17","36","2","1","2015-4-10","2016-5-11"),("10099","18","36","2","2","2015-4-10","2016-5-11"),("10100","19","36","2","3","2015-4-10","2016-5-11"),("10101","4","36","2","1","2015-4-10","2016-5-11");
 INSERT INTO DOCUMENT VALUES
 ("36","Tage der Unschuld.","2000-1-1","10030");
 INSERT INTO COPY VALUES
@@ -480,6 +557,8 @@ INSERT INTO JOURNAL_ISSUE VALUES
 ("37","1","Artificial Intelligence"),("37","2","Datebase Performance"),("37","3","Data Mining"),("37","4","Cloud Computing");
 INSERT INTO INV_EDITOR VALUES
 ("37","1","John Smith"),("37","2","Sherry Hou"),("37","3","Wenbin Ma"),("37","4","Yi Qi");
+INSERT INTO BORROWS VALUES
+("10102","4","37","3","1","2015-4-10","2016-5-11");
 INSERT INTO DOCUMENT VALUES
 ("37","Lying Awake","2000-1-1","10031");
 INSERT INTO COPY VALUES
@@ -489,7 +568,9 @@ INSERT INTO Publisher VALUES
 INSERT INTO Author VALUES
 ("10037","Harper Lee");
 INSERT INTO PROCEEDINGS VALUES
-("38","2003-4-10","158 Golden Street","Harper Lee");
+("38","2015-4-10","158 Golden Street","Harper Lee");
+INSERT INTO BORROWS VALUES
+("10103","4","38","4","1","2015-4-10","2016-5-11");
 INSERT INTO DOCUMENT VALUES
 ("38","To Kill a Mockingbird","1988-1-1","10032");
 INSERT INTO COPY VALUES
@@ -501,7 +582,7 @@ INSERT INTO BOOK VALUES
 INSERT INTO WRITES VALUES
 ("10038","39");
 INSERT INTO BORROWS VALUES
-("10051","20","39","1","1","2003-4-10","2003-5-12"),("10052","5","39","2","2","2003-4-10","2003-5-12"),("10053","5","39","3","3","2003-4-10","2003-5-12"),("10054","2","39","5","3","2003-4-10","2003-4-10");
+("10104","0","39","5","1","2015-4-10","2016-5-11"),("10105","1","39","5","2","2015-4-10","2016-5-11"),("10106","2","39","5","3","2015-4-10","2016-5-11"),("10107","4","39","5","1","2015-4-10","2016-5-11");
 INSERT INTO DOCUMENT VALUES
 ("39","Seabiscuit: An American Legend","2002-1-1","10027");
 INSERT INTO COPY VALUES
@@ -518,6 +599,8 @@ INSERT INTO JOURNAL_ISSUE VALUES
 ("40","1","Artificial Intelligence"),("40","2","Datebase Performance"),("40","3","Data Mining"),("40","4","Cloud Computing");
 INSERT INTO INV_EDITOR VALUES
 ("40","1","John Smith"),("40","2","Sherry Hou"),("40","3","Wenbin Ma"),("40","4","Yi Qi");
+INSERT INTO BORROWS VALUES
+("10108","1","40","1","2","2016-6-12","2016-7-13"),("10109","3","40","1","3","2016-6-12","2016-7-13"),("10110","5","40","1","1","2016-6-12","2016-7-13"),("10111","4","40","1","1","2015-5-11","2016-6-12");
 INSERT INTO DOCUMENT VALUES
 ("40","Pigs in Heaven","1993-1-1","10033");
 INSERT INTO COPY VALUES
@@ -527,7 +610,9 @@ INSERT INTO Publisher VALUES
 INSERT INTO Author VALUES
 ("10040","Jo Dereske");
 INSERT INTO PROCEEDINGS VALUES
-("41","2004-5-11","261 Dragon Ave","Jo Dereske");
+("41","2015-5-11","261 Dragon Ave","Jo Dereske");
+INSERT INTO BORROWS VALUES
+("10112","4","41","2","1","2015-5-11","2016-6-12");
 INSERT INTO DOCUMENT VALUES
 ("41","Miss Zukas and the Raven's Dance","1996-1-1","10034");
 INSERT INTO COPY VALUES
@@ -541,7 +626,7 @@ INSERT INTO BOOK VALUES
 INSERT INTO WRITES VALUES
 ("10041","42");
 INSERT INTO BORROWS VALUES
-("10055","3","42","1","1","2004-5-11","2004-6-13"),("10056","1","42","2","2","2004-5-11","2004-6-13"),("10057","5","42","3","3","2004-5-11","2004-6-13"),("10058","2","42","5","3","2004-5-11","2004-5-11");
+("10113","3","42","3","1","2015-5-11","2016-6-12"),("10114","4","42","3","2","2015-5-11","2016-6-12"),("10115","5","42","3","3","2015-5-11","2016-6-12"),("10116","4","42","3","1","2015-5-11","2016-6-12");
 INSERT INTO DOCUMENT VALUES
 ("42","Pride and Prejudice","1983-1-1","10035");
 INSERT INTO COPY VALUES
@@ -558,6 +643,8 @@ INSERT INTO JOURNAL_ISSUE VALUES
 ("43","1","Artificial Intelligence"),("43","2","Datebase Performance"),("43","3","Data Mining"),("43","4","Cloud Computing");
 INSERT INTO INV_EDITOR VALUES
 ("43","1","John Smith"),("43","2","Sherry Hou"),("43","3","Wenbin Ma"),("43","4","Yi Qi");
+INSERT INTO BORROWS VALUES
+("10117","4","43","4","1","2015-5-11","2016-6-12");
 INSERT INTO DOCUMENT VALUES
 ("43","The Therapeutic Touch: How to Use Your Hands to Help or to Heal","1979-1-1","10036");
 INSERT INTO COPY VALUES
@@ -567,7 +654,9 @@ INSERT INTO Publisher VALUES
 INSERT INTO Author VALUES
 ("10043","Anne Rivers Siddons");
 INSERT INTO PROCEEDINGS VALUES
-("44","2004-5-12","164 Golden Street","Anne Rivers Siddons");
+("44","2015-5-12","164 Golden Street","Anne Rivers Siddons");
+INSERT INTO BORROWS VALUES
+("10118","6","44","5","3","2016-6-13","2016-7-14"),("10119","8","44","5","1","2016-6-13","2016-7-14"),("10120","10","44","5","2","2016-6-13","2016-7-14"),("10121","4","44","5","1","2015-5-12","2016-6-13");
 INSERT INTO DOCUMENT VALUES
 ("44","Downtown","1995-1-1","10037");
 INSERT INTO COPY VALUES
@@ -581,7 +670,7 @@ INSERT INTO BOOK VALUES
 INSERT INTO WRITES VALUES
 ("10044","45");
 INSERT INTO BORROWS VALUES
-("10059","6","45","1","1","2004-5-12","2004-6-14"),("10060","4","45","2","2","2004-5-12","2004-6-14"),("10061","5","45","3","3","2004-5-12","2004-6-14"),("10062","2","45","5","3","2004-5-12","2004-5-12");
+("10122","6","45","1","1","2015-5-12","2016-6-13"),("10123","7","45","1","2","2015-5-12","2016-6-13"),("10124","8","45","1","3","2015-5-12","2016-6-13"),("10125","6","45","1","1","2016-6-13","2016-7-14"),("10126","8","45","1","2","2016-6-13","2016-7-14"),("10127","10","45","1","3","2016-6-13","2016-7-14"),("10128","4","45","1","1","2015-5-12","2016-6-13");
 INSERT INTO DOCUMENT VALUES
 ("45","Icebound","2000-1-1","10038");
 INSERT INTO COPY VALUES
@@ -598,6 +687,8 @@ INSERT INTO JOURNAL_ISSUE VALUES
 ("46","1","Artificial Intelligence"),("46","2","Datebase Performance"),("46","3","Data Mining"),("46","4","Cloud Computing");
 INSERT INTO INV_EDITOR VALUES
 ("46","1","John Smith"),("46","2","Sherry Hou"),("46","3","Wenbin Ma"),("46","4","Yi Qi");
+INSERT INTO BORROWS VALUES
+("10129","4","46","2","1","2015-5-12","2016-6-13");
 INSERT INTO DOCUMENT VALUES
 ("46","I'll Be Seeing You","1994-1-1","10039");
 INSERT INTO COPY VALUES
@@ -605,7 +696,9 @@ INSERT INTO COPY VALUES
 INSERT INTO Author VALUES
 ("10046","Dean Koontz");
 INSERT INTO PROCEEDINGS VALUES
-("47","2004-5-12","267 Dragon Ave","Dean Koontz");
+("47","2015-5-12","267 Dragon Ave","Dean Koontz");
+INSERT INTO BORROWS VALUES
+("10130","4","47","3","1","2015-5-12","2016-6-13");
 INSERT INTO DOCUMENT VALUES
 ("47","From the Corner of His Eye","2001-1-1","10038");
 INSERT INTO COPY VALUES
@@ -617,7 +710,7 @@ INSERT INTO BOOK VALUES
 INSERT INTO WRITES VALUES
 ("10047","48");
 INSERT INTO BORROWS VALUES
-("10063","9","48","1","1","2004-5-13","2004-6-15"),("10064","7","48","2","2","2004-5-13","2004-6-15"),("10065","5","48","3","3","2004-5-13","2004-6-15"),("10066","2","48","5","3","2004-5-13","2004-5-13");
+("10131","9","48","4","1","2015-5-13","2016-6-14"),("10132","10","48","4","2","2015-5-13","2016-6-14"),("10133","11","48","4","3","2015-5-13","2016-6-14"),("10134","4","48","4","1","2015-5-13","2016-6-14");
 INSERT INTO DOCUMENT VALUES
 ("48","Isle of Dogs","2002-1-1","10006");
 INSERT INTO COPY VALUES
@@ -632,6 +725,8 @@ INSERT INTO JOURNAL_ISSUE VALUES
 ("49","1","Artificial Intelligence"),("49","2","Datebase Performance"),("49","3","Data Mining"),("49","4","Cloud Computing");
 INSERT INTO INV_EDITOR VALUES
 ("49","1","John Smith"),("49","2","Sherry Hou"),("49","3","Wenbin Ma"),("49","4","Yi Qi");
+INSERT INTO BORROWS VALUES
+("10135","4","49","5","1","2015-5-13","2016-6-14");
 INSERT INTO DOCUMENT VALUES
 ("49","Purity in Death","2002-1-1","10006");
 INSERT INTO COPY VALUES
@@ -639,7 +734,9 @@ INSERT INTO COPY VALUES
 INSERT INTO Author VALUES
 ("10049","Maeve Binchy");
 INSERT INTO PROCEEDINGS VALUES
-("50","2005-6-13","170 Golden Street","Maeve Binchy");
+("50","2015-6-13","170 Golden Street","Maeve Binchy");
+INSERT INTO BORROWS VALUES
+("10136","11","50","1","3","2016-7-14","2016-8-15"),("10137","13","50","1","1","2016-7-14","2016-8-15"),("10138","15","50","1","2","2016-7-14","2016-8-15"),("10139","4","50","1","1","2015-6-13","2016-7-14");
 INSERT INTO DOCUMENT VALUES
 ("50","This Year It Will Be Different: And Other Stories","1997-1-1","10018");
 INSERT INTO COPY VALUES
@@ -653,7 +750,7 @@ INSERT INTO BOOK VALUES
 INSERT INTO WRITES VALUES
 ("10050","51");
 INSERT INTO BORROWS VALUES
-("10067","12","51","1","1","2005-6-13","2005-7-15"),("10068","3","51","2","2","2005-6-13","2005-7-15"),("10069","5","51","3","3","2005-6-13","2005-7-15"),("10070","2","51","5","3","2005-6-13","2005-6-13");
+("10140","12","51","2","1","2015-6-13","2016-7-14"),("10141","13","51","2","2","2015-6-13","2016-7-14"),("10142","14","51","2","3","2015-6-13","2016-7-14"),("10143","4","51","2","1","2015-6-13","2016-7-14");
 INSERT INTO DOCUMENT VALUES
 ("51","Proxies","1999-1-1","10040");
 INSERT INTO COPY VALUES
@@ -670,6 +767,8 @@ INSERT INTO JOURNAL_ISSUE VALUES
 ("52","1","Artificial Intelligence"),("52","2","Datebase Performance"),("52","3","Data Mining"),("52","4","Cloud Computing");
 INSERT INTO INV_EDITOR VALUES
 ("52","1","John Smith"),("52","2","Sherry Hou"),("52","3","Wenbin Ma"),("52","4","Yi Qi");
+INSERT INTO BORROWS VALUES
+("10144","4","52","3","1","2015-6-14","2016-7-15");
 INSERT INTO DOCUMENT VALUES
 ("52","Left Behind: A Novel of the Earth's Last Days (Left Behind #1)","2000-1-1","10041");
 INSERT INTO COPY VALUES
@@ -677,7 +776,9 @@ INSERT INTO COPY VALUES
 INSERT INTO Author VALUES
 ("10052","JOHN GRISHAM");
 INSERT INTO PROCEEDINGS VALUES
-("53","2005-6-14","273 Dragon Ave","JOHN GRISHAM");
+("53","2015-6-14","273 Dragon Ave","JOHN GRISHAM");
+INSERT INTO BORROWS VALUES
+("10145","4","53","4","1","2015-6-14","2016-7-15");
 INSERT INTO DOCUMENT VALUES
 ("53","The Street Lawyer","1999-1-1","10018");
 INSERT INTO COPY VALUES
@@ -691,7 +792,7 @@ INSERT INTO BOOK VALUES
 INSERT INTO WRITES VALUES
 ("10053","54");
 INSERT INTO BORROWS VALUES
-("10071","15","54","1","1","2005-6-14","2005-7-16"),("10072","6","54","2","2","2005-6-14","2005-7-16"),("10073","5","54","3","3","2005-6-14","2005-7-16"),("10074","2","54","5","3","2005-6-14","2005-6-14");
+("10146","15","54","5","1","2015-6-14","2016-7-15"),("10147","16","54","5","2","2015-6-14","2016-7-15"),("10148","17","54","5","3","2015-6-14","2016-7-15"),("10149","4","54","5","1","2015-6-14","2016-7-15");
 INSERT INTO DOCUMENT VALUES
 ("54","Love Medicine and Miracles","1988-1-1","10042");
 INSERT INTO COPY VALUES
@@ -708,6 +809,8 @@ INSERT INTO JOURNAL_ISSUE VALUES
 ("55","1","Artificial Intelligence"),("55","2","Datebase Performance"),("55","3","Data Mining"),("55","4","Cloud Computing");
 INSERT INTO INV_EDITOR VALUES
 ("55","1","John Smith"),("55","2","Sherry Hou"),("55","3","Wenbin Ma"),("55","4","Yi Qi");
+INSERT INTO BORROWS VALUES
+("10150","16","55","1","2","2016-7-15","2016-8-16"),("10151","18","55","1","3","2016-7-15","2016-8-16"),("10152","0","55","1","1","2016-7-15","2016-8-16"),("10153","4","55","1","1","2015-6-14","2016-7-15");
 INSERT INTO DOCUMENT VALUES
 ("55","All the King's Men","1982-1-1","10043");
 INSERT INTO COPY VALUES
@@ -717,7 +820,9 @@ INSERT INTO Publisher VALUES
 INSERT INTO Author VALUES
 ("10055","Hans Johannes Hoefer");
 INSERT INTO PROCEEDINGS VALUES
-("56","2005-6-15","176 Golden Street","Hans Johannes Hoefer");
+("56","2015-6-15","176 Golden Street","Hans Johannes Hoefer");
+INSERT INTO BORROWS VALUES
+("10154","4","56","2","1","2015-6-15","2016-7-16");
 INSERT INTO DOCUMENT VALUES
 ("56","Pacific Northwest","1985-1-1","10044");
 INSERT INTO COPY VALUES
@@ -731,7 +836,7 @@ INSERT INTO BOOK VALUES
 INSERT INTO WRITES VALUES
 ("10056","57");
 INSERT INTO BORROWS VALUES
-("10075","18","57","1","1","2005-6-15","2005-7-17"),("10076","2","57","2","2","2005-6-15","2005-7-17"),("10077","5","57","3","3","2005-6-15","2005-7-17"),("10078","2","57","5","3","2005-6-15","2005-6-15");
+("10155","18","57","3","1","2015-6-15","2016-7-16"),("10156","19","57","3","2","2015-6-15","2016-7-16"),("10157","0","57","3","3","2015-6-15","2016-7-16"),("10158","4","57","3","1","2015-6-15","2016-7-16");
 INSERT INTO DOCUMENT VALUES
 ("57","A Soldier of the Great War","1992-1-1","10045");
 INSERT INTO COPY VALUES
@@ -746,6 +851,8 @@ INSERT INTO JOURNAL_ISSUE VALUES
 ("58","1","Artificial Intelligence"),("58","2","Datebase Performance"),("58","3","Data Mining"),("58","4","Cloud Computing");
 INSERT INTO INV_EDITOR VALUES
 ("58","1","John Smith"),("58","2","Sherry Hou"),("58","3","Wenbin Ma"),("58","4","Yi Qi");
+INSERT INTO BORROWS VALUES
+("10159","4","58","4","1","2015-6-15","2016-7-16");
 INSERT INTO DOCUMENT VALUES
 ("58","Getting Well Again","1992-1-1","10035");
 INSERT INTO COPY VALUES
@@ -755,7 +862,9 @@ INSERT INTO Publisher VALUES
 INSERT INTO Author VALUES
 ("10058","Chuck Hill");
 INSERT INTO PROCEEDINGS VALUES
-("59","2005-6-15","279 Dragon Ave","Chuck Hill");
+("59","2015-6-15","279 Dragon Ave","Chuck Hill");
+INSERT INTO BORROWS VALUES
+("10160","4","59","5","1","2015-6-15","2016-7-16");
 INSERT INTO DOCUMENT VALUES
 ("59","Northwest Wines and Wineries","1993-1-1","10046");
 INSERT INTO COPY VALUES
@@ -769,7 +878,7 @@ INSERT INTO BOOK VALUES
 INSERT INTO WRITES VALUES
 ("10059","60");
 INSERT INTO BORROWS VALUES
-("10079","1","60","1","1","2006-7-16","2006-8-18"),("10080","5","60","2","2","2006-7-16","2006-8-18"),("10081","5","60","3","3","2006-7-16","2006-8-18"),("10082","2","60","5","3","2006-7-16","2006-7-16");
+("10161","1","60","1","1","2015-7-16","2016-8-17"),("10162","2","60","1","2","2015-7-16","2016-8-17"),("10163","3","60","1","3","2015-7-16","2016-8-17"),("10164","1","60","1","1","2016-8-17","2016-9-18"),("10165","3","60","1","2","2016-8-17","2016-9-18"),("10166","5","60","1","3","2016-8-17","2016-9-18"),("10167","4","60","1","1","2015-7-16","2016-8-17");
 INSERT INTO DOCUMENT VALUES
 ("60","An Atmosphere of Eternity: Stories of India","2002-1-1","10047");
 INSERT INTO COPY VALUES
@@ -784,6 +893,8 @@ INSERT INTO JOURNAL_ISSUE VALUES
 ("61","1","Artificial Intelligence"),("61","2","Datebase Performance"),("61","3","Data Mining"),("61","4","Cloud Computing");
 INSERT INTO INV_EDITOR VALUES
 ("61","1","John Smith"),("61","2","Sherry Hou"),("61","3","Wenbin Ma"),("61","4","Yi Qi");
+INSERT INTO BORROWS VALUES
+("10168","4","61","2","1","2015-7-16","2016-8-17");
 INSERT INTO DOCUMENT VALUES
 ("61","LONESOME DOVE","1986-1-1","10039");
 INSERT INTO COPY VALUES
@@ -793,7 +904,9 @@ INSERT INTO Publisher VALUES
 INSERT INTO Author VALUES
 ("10061","SUZANNE FISHER STAPLES");
 INSERT INTO PROCEEDINGS VALUES
-("62","2006-7-16","182 Golden Street","SUZANNE FISHER STAPLES");
+("62","2015-7-16","182 Golden Street","SUZANNE FISHER STAPLES");
+INSERT INTO BORROWS VALUES
+("10169","4","62","3","1","2015-7-16","2016-8-17");
 INSERT INTO DOCUMENT VALUES
 ("62","Shabanu: Daughter of the Wind (Border Trilogy)","1991-1-1","10048");
 INSERT INTO COPY VALUES
@@ -803,7 +916,7 @@ INSERT INTO BOOK VALUES
 INSERT INTO WRITES VALUES
 ("10061","63");
 INSERT INTO BORROWS VALUES
-("10083","4","63","1","1","2006-7-16","2006-8-18"),("10084","1","63","2","2","2006-7-16","2006-8-18"),("10085","5","63","3","3","2006-7-16","2006-8-18"),("10086","2","63","5","3","2006-7-16","2006-7-16");
+("10170","4","63","4","1","2015-7-16","2016-8-17"),("10171","5","63","4","2","2015-7-16","2016-8-17"),("10172","6","63","4","3","2015-7-16","2016-8-17"),("10173","4","63","4","1","2015-7-16","2016-8-17");
 INSERT INTO DOCUMENT VALUES
 ("63","Haveli (Laurel Leaf Books)","1995-1-1","10048");
 INSERT INTO COPY VALUES
@@ -820,6 +933,8 @@ INSERT INTO JOURNAL_ISSUE VALUES
 ("64","1","Artificial Intelligence"),("64","2","Datebase Performance"),("64","3","Data Mining"),("64","4","Cloud Computing");
 INSERT INTO INV_EDITOR VALUES
 ("64","1","John Smith"),("64","2","Sherry Hou"),("64","3","Wenbin Ma"),("64","4","Yi Qi");
+INSERT INTO BORROWS VALUES
+("10174","4","64","5","1","2015-7-17","2016-8-18");
 INSERT INTO DOCUMENT VALUES
 ("64","Lieux dits","2002-1-1","10049");
 INSERT INTO COPY VALUES
@@ -827,7 +942,9 @@ INSERT INTO COPY VALUES
 INSERT INTO Author VALUES
 ("10063","Carl Sagan");
 INSERT INTO PROCEEDINGS VALUES
-("65","2006-7-17","285 Dragon Ave","Carl Sagan");
+("65","2015-7-17","285 Dragon Ave","Carl Sagan");
+INSERT INTO BORROWS VALUES
+("10175","6","65","1","3","2016-8-18","2016-9-19"),("10176","8","65","1","1","2016-8-18","2016-9-19"),("10177","10","65","1","2","2016-8-18","2016-9-19"),("10178","4","65","1","1","2015-7-17","2016-8-18");
 INSERT INTO DOCUMENT VALUES
 ("65","The Dragons of Eden: Speculations on the Evolution of Human Intelligence","1978-1-1","10027");
 INSERT INTO COPY VALUES
@@ -839,7 +956,7 @@ INSERT INTO BOOK VALUES
 INSERT INTO WRITES VALUES
 ("10064","66");
 INSERT INTO BORROWS VALUES
-("10087","7","66","1","1","2006-7-17","2006-8-19"),("10088","4","66","2","2","2006-7-17","2006-8-19"),("10089","5","66","3","3","2006-7-17","2006-8-19"),("10090","2","66","4","1","2006-7-17","2006-8-19"),("10091","2","66","5","2","2006-7-17","2006-8-19"),("10092","3","66","5","1","2006-7-17","2006-8-19"),("10093","2","66","5","3","2006-7-17","2006-7-17");
+("10179","7","66","2","1","2015-7-17","2016-8-18"),("10180","8","66","2","2","2015-7-17","2016-8-18"),("10181","9","66","2","3","2015-7-17","2016-8-18"),("10182","8","66","2","1","2016-8-18","2016-9-19"),("10183","10","66","2","2","2016-8-18","2016-9-19"),("10184","12","66","2","3","2016-8-18","2016-9-19"),("10185","4","66","2","1","2015-7-17","2016-8-18");
 INSERT INTO DOCUMENT VALUES
 ("66","The yawning heights","1980-1-1","10008");
 INSERT INTO COPY VALUES
@@ -854,6 +971,8 @@ INSERT INTO JOURNAL_ISSUE VALUES
 ("67","1","Artificial Intelligence"),("67","2","Datebase Performance"),("67","3","Data Mining"),("67","4","Cloud Computing");
 INSERT INTO INV_EDITOR VALUES
 ("67","1","John Smith"),("67","2","Sherry Hou"),("67","3","Wenbin Ma"),("67","4","Yi Qi");
+INSERT INTO BORROWS VALUES
+("10186","4","67","3","1","2015-7-17","2016-8-18");
 INSERT INTO DOCUMENT VALUES
 ("67","Breathing Lessons","1994-1-1","10006");
 INSERT INTO COPY VALUES
@@ -861,7 +980,9 @@ INSERT INTO COPY VALUES
 INSERT INTO Publisher VALUES
 ("10050","Prentice Hall (K-12)","188 Golden Street");
 INSERT INTO PROCEEDINGS VALUES
-("68","2006-7-18","188 Golden Street","Amy Tan");
+("68","2015-7-18","188 Golden Street","Amy Tan");
+INSERT INTO BORROWS VALUES
+("10187","4","68","4","1","2015-7-18","2016-8-19");
 INSERT INTO DOCUMENT VALUES
 ("68","The Joy Luck Club","1994-1-1","10050");
 INSERT INTO COPY VALUES
@@ -875,7 +996,7 @@ INSERT INTO BOOK VALUES
 INSERT INTO WRITES VALUES
 ("10066","69");
 INSERT INTO BORROWS VALUES
-("10094","10","69","1","1","2006-7-18","2006-8-20"),("10095","7","69","2","2","2006-7-18","2006-8-20"),("10096","5","69","3","3","2006-7-18","2006-8-20"),("10097","2","69","5","3","2006-7-18","2006-7-18");
+("10188","10","69","5","1","2015-7-18","2016-8-19"),("10189","11","69","5","2","2015-7-18","2016-8-19"),("10190","12","69","5","3","2015-7-18","2016-8-19"),("10191","4","69","5","1","2015-7-18","2016-8-19");
 INSERT INTO DOCUMENT VALUES
 ("69","Heart of Darkness (Wordsworth Collection)","1998-1-1","10051");
 INSERT INTO COPY VALUES
@@ -892,6 +1013,8 @@ INSERT INTO JOURNAL_ISSUE VALUES
 ("70","1","Artificial Intelligence"),("70","2","Datebase Performance"),("70","3","Data Mining"),("70","4","Cloud Computing");
 INSERT INTO INV_EDITOR VALUES
 ("70","1","John Smith"),("70","2","Sherry Hou"),("70","3","Wenbin Ma"),("70","4","Yi Qi");
+INSERT INTO BORROWS VALUES
+("10192","11","70","1","2","2016-9-19","2016-10-20"),("10193","13","70","1","3","2016-9-19","2016-10-20"),("10194","15","70","1","1","2016-9-19","2016-10-20"),("10195","4","70","1","1","2015-8-18","2016-9-19");
 INSERT INTO DOCUMENT VALUES
 ("70","The Angel Is Near","2000-1-1","10052");
 INSERT INTO COPY VALUES
@@ -899,7 +1022,9 @@ INSERT INTO COPY VALUES
 INSERT INTO Author VALUES
 ("10068","Thomas Hardy");
 INSERT INTO PROCEEDINGS VALUES
-("71","2007-8-18","291 Dragon Ave","Thomas Hardy");
+("71","2015-8-18","291 Dragon Ave","Thomas Hardy");
+INSERT INTO BORROWS VALUES
+("10196","4","71","2","1","2015-8-18","2016-9-19");
 INSERT INTO DOCUMENT VALUES
 ("71","Tess of the D'Urbervilles (Wordsworth Classics)","1997-1-1","10051");
 INSERT INTO COPY VALUES
@@ -913,7 +1038,7 @@ INSERT INTO BOOK VALUES
 INSERT INTO WRITES VALUES
 ("10069","72");
 INSERT INTO BORROWS VALUES
-("10098","13","72","1","1","2007-8-19","2007-9-21"),("10099","3","72","2","2","2007-8-19","2007-9-21"),("10100","5","72","3","3","2007-8-19","2007-9-21"),("10101","2","72","5","3","2007-8-19","2007-8-19");
+("10197","13","72","3","1","2015-8-19","2016-9-20"),("10198","14","72","3","2","2015-8-19","2016-9-20"),("10199","15","72","3","3","2015-8-19","2016-9-20"),("10200","4","72","3","1","2015-8-19","2016-9-20");
 INSERT INTO DOCUMENT VALUES
 ("72","The Adventures of Drew and Ellie: The Magical Dress","2003-1-1","10053");
 INSERT INTO COPY VALUES
@@ -930,6 +1055,8 @@ INSERT INTO JOURNAL_ISSUE VALUES
 ("73","1","Artificial Intelligence"),("73","2","Datebase Performance"),("73","3","Data Mining"),("73","4","Cloud Computing");
 INSERT INTO INV_EDITOR VALUES
 ("73","1","John Smith"),("73","2","Sherry Hou"),("73","3","Wenbin Ma"),("73","4","Yi Qi");
+INSERT INTO BORROWS VALUES
+("10201","4","73","4","1","2015-8-19","2016-9-20");
 INSERT INTO DOCUMENT VALUES
 ("73","The Accidental Virgin","2003-1-1","10054");
 INSERT INTO COPY VALUES
@@ -939,7 +1066,9 @@ INSERT INTO Publisher VALUES
 INSERT INTO Author VALUES
 ("10071","Benjamin Hoff");
 INSERT INTO PROCEEDINGS VALUES
-("74","2007-8-19","194 Golden Street","Benjamin Hoff");
+("74","2015-8-19","194 Golden Street","Benjamin Hoff");
+INSERT INTO BORROWS VALUES
+("10202","4","74","5","1","2015-8-19","2016-9-20");
 INSERT INTO DOCUMENT VALUES
 ("74","The Tao of Pooh","1983-1-1","10055");
 INSERT INTO COPY VALUES
@@ -949,7 +1078,7 @@ INSERT INTO BOOK VALUES
 INSERT INTO WRITES VALUES
 ("10038","75");
 INSERT INTO BORROWS VALUES
-("10102","16","75","1","1","2007-8-19","2007-9-21"),("10103","6","75","2","2","2007-8-19","2007-9-21"),("10104","5","75","3","3","2007-8-19","2007-9-21"),("10105","2","75","5","3","2007-8-19","2007-8-19");
+("10203","16","75","1","1","2015-8-19","2016-9-20"),("10204","17","75","1","2","2015-8-19","2016-9-20"),("10205","18","75","1","3","2015-8-19","2016-9-20"),("10206","16","75","1","1","2016-9-20","2016-10-21"),("10207","18","75","1","2","2016-9-20","2016-10-21"),("10208","0","75","1","3","2016-9-20","2016-10-21"),("10209","4","75","1","1","2015-8-19","2016-9-20");
 INSERT INTO DOCUMENT VALUES
 ("75","Seabiscuit","2003-1-1","10027");
 INSERT INTO COPY VALUES
@@ -966,6 +1095,8 @@ INSERT INTO JOURNAL_ISSUE VALUES
 ("76","1","Artificial Intelligence"),("76","2","Datebase Performance"),("76","3","Data Mining"),("76","4","Cloud Computing");
 INSERT INTO INV_EDITOR VALUES
 ("76","1","John Smith"),("76","2","Sherry Hou"),("76","3","Wenbin Ma"),("76","4","Yi Qi");
+INSERT INTO BORROWS VALUES
+("10210","4","76","2","1","2015-8-20","2016-9-21");
 INSERT INTO DOCUMENT VALUES
 ("76","The Prince","1952-1-1","10056");
 INSERT INTO COPY VALUES
@@ -975,7 +1106,9 @@ INSERT INTO Publisher VALUES
 INSERT INTO Author VALUES
 ("10073","H. Jackson Brown");
 INSERT INTO PROCEEDINGS VALUES
-("77","2007-8-20","297 Dragon Ave","H. Jackson Brown");
+("77","2015-8-20","297 Dragon Ave","H. Jackson Brown");
+INSERT INTO BORROWS VALUES
+("10211","19","77","3","3","2016-9-21","2016-10-22"),("10212","1","77","3","1","2016-9-21","2016-10-22"),("10213","3","77","3","2","2016-9-21","2016-10-22"),("10214","4","77","3","1","2015-8-20","2016-9-21");
 INSERT INTO DOCUMENT VALUES
 ("77","Life's Little Instruction Book (Life's Little Instruction Books (Paperback))","1991-1-1","10057");
 INSERT INTO COPY VALUES
@@ -989,7 +1122,7 @@ INSERT INTO BOOK VALUES
 INSERT INTO WRITES VALUES
 ("10074","78");
 INSERT INTO BORROWS VALUES
-("10106","19","78","1","1","2007-8-20","2007-9-22"),("10107","2","78","2","2","2007-8-20","2007-9-22"),("10108","5","78","3","3","2007-8-20","2007-9-22"),("10109","2","78","5","3","2007-8-20","2007-8-20");
+("10215","19","78","4","1","2015-8-20","2016-9-21"),("10216","0","78","4","2","2015-8-20","2016-9-21"),("10217","1","78","4","3","2015-8-20","2016-9-21"),("10218","4","78","4","1","2015-8-20","2016-9-21");
 INSERT INTO DOCUMENT VALUES
 ("78","Starship Troopers","1987-1-1","10058");
 INSERT INTO COPY VALUES
@@ -1004,6 +1137,8 @@ INSERT INTO JOURNAL_ISSUE VALUES
 ("79","1","Artificial Intelligence"),("79","2","Datebase Performance"),("79","3","Data Mining"),("79","4","Cloud Computing");
 INSERT INTO INV_EDITOR VALUES
 ("79","1","John Smith"),("79","2","Sherry Hou"),("79","3","Wenbin Ma"),("79","4","Yi Qi");
+INSERT INTO BORROWS VALUES
+("10219","4","79","5","1","2015-8-20","2016-9-21");
 INSERT INTO DOCUMENT VALUES
 ("79","The Ruby in the Smoke (Sally Lockhart Trilogy Book 1)","1988-1-1","10048");
 INSERT INTO COPY VALUES
@@ -1013,7 +1148,9 @@ INSERT INTO Publisher VALUES
 INSERT INTO Author VALUES
 ("10076","Anna Sewell");
 INSERT INTO PROCEEDINGS VALUES
-("80","2008-9-21","200 Golden Street","Anna Sewell");
+("80","2015-9-21","200 Golden Street","Anna Sewell");
+INSERT INTO BORROWS VALUES
+("10220","1","80","1","3","2016-10-22","2016-11-23"),("10221","3","80","1","1","2016-10-22","2016-11-23"),("10222","5","80","1","2","2016-10-22","2016-11-23"),("10223","4","80","1","1","2015-9-21","2016-10-22");
 INSERT INTO DOCUMENT VALUES
 ("80","Black Beauty (Illustrated Classics)","1995-1-1","10059");
 INSERT INTO COPY VALUES
@@ -1027,7 +1164,7 @@ INSERT INTO BOOK VALUES
 INSERT INTO WRITES VALUES
 ("10077","81");
 INSERT INTO BORROWS VALUES
-("10110","2","81","1","1","2008-9-21","2008-10-23"),("10111","5","81","2","2","2008-9-21","2008-10-23"),("10112","5","81","3","3","2008-9-21","2008-10-23"),("10113","2","81","5","3","2008-9-21","2008-9-21");
+("10224","2","81","2","1","2015-9-21","2016-10-22"),("10225","3","81","2","2","2015-9-21","2016-10-22"),("10226","4","81","2","3","2015-9-21","2016-10-22"),("10227","4","81","2","1","2015-9-21","2016-10-22");
 INSERT INTO DOCUMENT VALUES
 ("81","Anil's Ghost","2000-1-1","10060");
 INSERT INTO COPY VALUES
@@ -1044,6 +1181,8 @@ INSERT INTO JOURNAL_ISSUE VALUES
 ("82","1","Artificial Intelligence"),("82","2","Datebase Performance"),("82","3","Data Mining"),("82","4","Cloud Computing");
 INSERT INTO INV_EDITOR VALUES
 ("82","1","John Smith"),("82","2","Sherry Hou"),("82","3","Wenbin Ma"),("82","4","Yi Qi");
+INSERT INTO BORROWS VALUES
+("10228","4","82","3","1","2015-9-21","2016-10-22");
 INSERT INTO DOCUMENT VALUES
 ("82","Prescription for Terror","1999-1-1","10061");
 INSERT INTO COPY VALUES
@@ -1053,7 +1192,9 @@ INSERT INTO Publisher VALUES
 INSERT INTO Author VALUES
 ("10079","P.J. O'Rourke");
 INSERT INTO PROCEEDINGS VALUES
-("83","2008-9-21","303 Dragon Ave","P.J. O'Rourke");
+("83","2015-9-21","303 Dragon Ave","P.J. O'Rourke");
+INSERT INTO BORROWS VALUES
+("10229","4","83","4","1","2015-9-21","2016-10-22");
 INSERT INTO DOCUMENT VALUES
 ("83","Modern Manners: An Etiquette Book for Rude People","1990-1-1","10062");
 INSERT INTO COPY VALUES
@@ -1067,7 +1208,7 @@ INSERT INTO BOOK VALUES
 INSERT INTO WRITES VALUES
 ("10080","84");
 INSERT INTO BORROWS VALUES
-("10114","5","84","1","1","2008-9-22","2008-10-24"),("10115","1","84","2","2","2008-9-22","2008-10-24"),("10116","5","84","3","3","2008-9-22","2008-10-24"),("10117","2","84","5","3","2008-9-22","2008-9-22");
+("10230","5","84","5","1","2015-9-22","2016-10-23"),("10231","6","84","5","2","2015-9-22","2016-10-23"),("10232","7","84","5","3","2015-9-22","2016-10-23"),("10233","4","84","5","1","2015-9-22","2016-10-23");
 INSERT INTO DOCUMENT VALUES
 ("84","Turning Thirty","2000-1-1","10063");
 INSERT INTO COPY VALUES
@@ -1084,6 +1225,8 @@ INSERT INTO JOURNAL_ISSUE VALUES
 ("85","1","Artificial Intelligence"),("85","2","Datebase Performance"),("85","3","Data Mining"),("85","4","Cloud Computing");
 INSERT INTO INV_EDITOR VALUES
 ("85","1","John Smith"),("85","2","Sherry Hou"),("85","3","Wenbin Ma"),("85","4","Yi Qi");
+INSERT INTO BORROWS VALUES
+("10234","6","85","1","2","2016-10-23","2016-11-24"),("10235","8","85","1","3","2016-10-23","2016-11-24"),("10236","10","85","1","1","2016-10-23","2016-11-24"),("10237","4","85","1","1","2015-9-22","2016-10-23");
 INSERT INTO DOCUMENT VALUES
 ("85","Decipher","2002-1-1","10064");
 INSERT INTO COPY VALUES
@@ -1093,7 +1236,9 @@ INSERT INTO Publisher VALUES
 INSERT INTO Author VALUES
 ("10082","Sarah Payne Stuart");
 INSERT INTO PROCEEDINGS VALUES
-("86","2008-9-22","206 Golden Street","Sarah Payne Stuart");
+("86","2015-9-22","206 Golden Street","Sarah Payne Stuart");
+INSERT INTO BORROWS VALUES
+("10238","4","86","2","1","2015-9-22","2016-10-23");
 INSERT INTO DOCUMENT VALUES
 ("86","My First Cousin Once Removed: MoneyMadness and the Family of Robert Lowell","1999-1-1","10065");
 INSERT INTO COPY VALUES
@@ -1105,7 +1250,7 @@ INSERT INTO BOOK VALUES
 INSERT INTO WRITES VALUES
 ("10083","87");
 INSERT INTO BORROWS VALUES
-("10118","8","87","1","1","2008-9-22","2008-10-24"),("10119","4","87","2","2","2008-9-22","2008-10-24"),("10120","5","87","3","3","2008-9-22","2008-10-24"),("10121","2","87","5","3","2008-9-22","2008-9-22");
+("10239","8","87","3","1","2015-9-22","2016-10-23"),("10240","9","87","3","2","2015-9-22","2016-10-23"),("10241","10","87","3","3","2015-9-22","2016-10-23"),("10242","4","87","3","1","2015-9-22","2016-10-23");
 INSERT INTO DOCUMENT VALUES
 ("87","Standing Firm: A Vice-Presidential Memoir","1994-1-1","10033");
 INSERT INTO COPY VALUES
@@ -1122,6 +1267,8 @@ INSERT INTO JOURNAL_ISSUE VALUES
 ("88","1","Artificial Intelligence"),("88","2","Datebase Performance"),("88","3","Data Mining"),("88","4","Cloud Computing");
 INSERT INTO INV_EDITOR VALUES
 ("88","1","John Smith"),("88","2","Sherry Hou"),("88","3","Wenbin Ma"),("88","4","Yi Qi");
+INSERT INTO BORROWS VALUES
+("10243","10","88","4","2","2016-10-24","2016-11-25"),("10244","12","88","4","3","2016-10-24","2016-11-25"),("10245","14","88","4","1","2016-10-24","2016-11-25"),("10246","4","88","4","1","2015-9-23","2016-10-24");
 INSERT INTO DOCUMENT VALUES
 ("88","Team Bush : Leadership Lessons from the Bush White House","2003-1-1","10066");
 INSERT INTO COPY VALUES
@@ -1129,7 +1276,9 @@ INSERT INTO COPY VALUES
 INSERT INTO Author VALUES
 ("10085","DAVID FRUM");
 INSERT INTO PROCEEDINGS VALUES
-("89","2008-9-23","309 Dragon Ave","DAVID FRUM");
+("89","2015-9-23","309 Dragon Ave","DAVID FRUM");
+INSERT INTO BORROWS VALUES
+("10247","4","89","5","1","2015-9-23","2016-10-24");
 INSERT INTO DOCUMENT VALUES
 ("89","The Right Man : The Surprise Presidency of George W. Bush","2003-1-1","10008");
 INSERT INTO COPY VALUES
@@ -1143,7 +1292,7 @@ INSERT INTO BOOK VALUES
 INSERT INTO WRITES VALUES
 ("10086","90");
 INSERT INTO BORROWS VALUES
-("10122","11","90","1","1","2009-10-23","2009-11-25"),("10123","7","90","2","2","2009-10-23","2009-11-25"),("10124","5","90","3","3","2009-10-23","2009-11-25"),("10125","2","90","5","3","2009-10-23","2009-10-23");
+("10248","11","90","1","1","2015-10-23","2016-11-24"),("10249","12","90","1","2","2015-10-23","2016-11-24"),("10250","13","90","1","3","2015-10-23","2016-11-24"),("10251","11","90","1","1","2016-11-24","2016-12-25"),("10252","13","90","1","2","2016-11-24","2016-12-25"),("10253","15","90","1","3","2016-11-24","2016-12-25"),("10254","4","90","1","1","2015-10-23","2016-11-24");
 INSERT INTO DOCUMENT VALUES
 ("90","Daybreakers Louis Lamour Collection","1981-1-1","10067");
 INSERT INTO COPY VALUES
@@ -1160,6 +1309,8 @@ INSERT INTO JOURNAL_ISSUE VALUES
 ("91","1","Artificial Intelligence"),("91","2","Datebase Performance"),("91","3","Data Mining"),("91","4","Cloud Computing");
 INSERT INTO INV_EDITOR VALUES
 ("91","1","John Smith"),("91","2","Sherry Hou"),("91","3","Wenbin Ma"),("91","4","Yi Qi");
+INSERT INTO BORROWS VALUES
+("10255","4","91","2","1","2015-10-23","2016-11-24");
 INSERT INTO DOCUMENT VALUES
 ("91","The Catcher in the Rye","1991-1-1","10068");
 INSERT INTO COPY VALUES
@@ -1169,7 +1320,9 @@ INSERT INTO Publisher VALUES
 INSERT INTO Author VALUES
 ("10088","J. R. R. Tolkien");
 INSERT INTO PROCEEDINGS VALUES
-("92","2009-10-24","212 Golden Street","J. R. R. Tolkien");
+("92","2015-10-24","212 Golden Street","J. R. R. Tolkien");
+INSERT INTO BORROWS VALUES
+("10256","4","92","3","1","2015-10-24","2016-11-25");
 INSERT INTO DOCUMENT VALUES
 ("92","El Senor De Los Anillos: LA Comunidad Del Anillo (Lord of the Rings (Spanish))","2001-1-1","10069");
 INSERT INTO COPY VALUES
@@ -1179,7 +1332,7 @@ INSERT INTO BOOK VALUES
 INSERT INTO WRITES VALUES
 ("10088","93");
 INSERT INTO BORROWS VALUES
-("10126","14","93","1","1","2009-10-24","2009-11-26"),("10127","3","93","2","2","2009-10-24","2009-11-26"),("10128","5","93","3","3","2009-10-24","2009-11-26"),("10129","2","93","5","3","2009-10-24","2009-10-24");
+("10257","14","93","4","1","2015-10-24","2016-11-25"),("10258","15","93","4","2","2015-10-24","2016-11-25"),("10259","16","93","4","3","2015-10-24","2016-11-25"),("10260","4","93","4","1","2015-10-24","2016-11-25");
 INSERT INTO DOCUMENT VALUES
 ("93","El Senor De Los Anillos: Las DOS Torres (Lord of the Rings (Paperback))","2001-1-1","10069");
 INSERT INTO COPY VALUES
@@ -1194,6 +1347,8 @@ INSERT INTO JOURNAL_ISSUE VALUES
 ("94","1","Artificial Intelligence"),("94","2","Datebase Performance"),("94","3","Data Mining"),("94","4","Cloud Computing");
 INSERT INTO INV_EDITOR VALUES
 ("94","1","John Smith"),("94","2","Sherry Hou"),("94","3","Wenbin Ma"),("94","4","Yi Qi");
+INSERT INTO BORROWS VALUES
+("10261","4","94","5","1","2015-10-24","2016-11-25");
 INSERT INTO DOCUMENT VALUES
 ("94","El Senor De Los Anillos: El Retorno Del Rey (Tolkien J. R. R. Lord of the Rings. 3.)","2001-1-1","10070");
 INSERT INTO COPY VALUES
@@ -1201,7 +1356,9 @@ INSERT INTO COPY VALUES
 INSERT INTO Author VALUES
 ("10089","John Berendt");
 INSERT INTO PROCEEDINGS VALUES
-("95","2009-10-24","315 Dragon Ave","John Berendt");
+("95","2015-10-24","315 Dragon Ave","John Berendt");
+INSERT INTO BORROWS VALUES
+("10262","16","95","1","3","2016-11-25","2016-12-26"),("10263","18","95","1","1","2016-11-25","2016-12-26"),("10264","0","95","1","2","2016-11-25","2016-12-26"),("10265","4","95","1","1","2015-10-24","2016-11-25");
 INSERT INTO DOCUMENT VALUES
 ("95","Midnight in the Garden of Good and Evil: A Savannah Story","1994-1-1","10008");
 INSERT INTO COPY VALUES
@@ -1211,7 +1368,7 @@ INSERT INTO BOOK VALUES
 INSERT INTO WRITES VALUES
 ("10045","96");
 INSERT INTO BORROWS VALUES
-("10130","17","96","1","1","2009-10-25","2009-11-27"),("10131","6","96","2","2","2009-10-25","2009-11-27"),("10132","5","96","3","3","2009-10-25","2009-11-27"),("10133","2","96","5","3","2009-10-25","2009-10-25");
+("10266","17","96","2","1","2015-10-25","2016-11-26"),("10267","18","96","2","2","2015-10-25","2016-11-26"),("10268","19","96","2","3","2015-10-25","2016-11-26"),("10269","4","96","2","1","2015-10-25","2016-11-26");
 INSERT INTO DOCUMENT VALUES
 ("96","Pretend You Don't See Her","1998-1-1","10039");
 INSERT INTO COPY VALUES
@@ -1226,6 +1383,8 @@ INSERT INTO JOURNAL_ISSUE VALUES
 ("97","1","Artificial Intelligence"),("97","2","Datebase Performance"),("97","3","Data Mining"),("97","4","Cloud Computing");
 INSERT INTO INV_EDITOR VALUES
 ("97","1","John Smith"),("97","2","Sherry Hou"),("97","3","Wenbin Ma"),("97","4","Yi Qi");
+INSERT INTO BORROWS VALUES
+("10270","4","97","3","1","2015-10-25","2016-11-26");
 INSERT INTO DOCUMENT VALUES
 ("97","Fast Women","2001-1-1","10052");
 INSERT INTO COPY VALUES
@@ -1233,7 +1392,9 @@ INSERT INTO COPY VALUES
 INSERT INTO Author VALUES
 ("10091","Jane Heller");
 INSERT INTO PROCEEDINGS VALUES
-("98","2009-10-25","218 Golden Street","Jane Heller");
+("98","2015-10-25","218 Golden Street","Jane Heller");
+INSERT INTO BORROWS VALUES
+("10271","4","98","4","1","2015-10-25","2016-11-26");
 INSERT INTO DOCUMENT VALUES
 ("98","Female Intelligence","2001-1-1","10052");
 INSERT INTO COPY VALUES
@@ -1247,8 +1408,9 @@ INSERT INTO BOOK VALUES
 INSERT INTO WRITES VALUES
 ("10092","99");
 INSERT INTO BORROWS VALUES
-("10134","20","99","1","1","2009-10-25","2009-11-27"),("10135","2","99","2","2","2009-10-25","2009-11-27"),("10136","5","99","3","3","2009-10-25","2009-11-27"),("10137","2","99","4","1","2009-10-25","2009-11-27"),("10138","2","99","5","2","2009-10-25","2009-11-27"),("10139","3","99","5","1","2009-10-25","2009-11-27"),("10140","2","99","5","3","2009-10-25","2009-10-25");
+("10272","0","99","5","1","2015-10-25","2016-11-26"),("10273","1","99","5","2","2015-10-25","2016-11-26"),("10274","2","99","5","3","2015-10-25","2016-11-26"),("10275","1","99","5","1","2016-11-26","2016-12-27"),("10276","3","99","5","2","2016-11-26","2016-12-27"),("10277","5","99","5","3","2016-11-26","2016-12-27"),("10278","4","99","5","1","2015-10-25","2016-11-26");
 INSERT INTO DOCUMENT VALUES
 ("99","Pasquale's Nose: Idle Days in an Italian Town","2002-1-1","10071");
 INSERT INTO COPY VALUES
 ("99","1","1","001A03"),("99","2","1","002A08"),("99","3","1","005B09"),("99","1","2","001A03"),("99","2","2","002A08"),("99","3","2","005B09"),("99","1","3","001A03"),("99","2","3","002A08"),("99","3","3","005B09"),("99","1","4","001A03"),("99","2","4","002A08"),("99","3","4","005B09"),("99","1","5","001A03"),("99","2","5","002A08"),("99","3","5","005B09");
+set foreign_key_checks = 1;

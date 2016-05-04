@@ -247,12 +247,16 @@ public class DataBaseInitiate {
                 Copyvalues.add(new String[]{String.valueOf(i), "2", "5", location2});
                 Copyvalues.add(new String[]{String.valueOf(i), "3", "5", location3});
                 
-                String date = (i / 10 > 15 ? 2015 : 2000 + i / 10) 
+                String date = "2015"
                         + "-" + (i / 10 + 1 > 12 ? 12 : i / 10 + 1) 
                         + "-" + (i / 4 + 1 > 28 ? 28 : i / 4 + 1);
                 
-                String date2 = (i / 10 > 15 ? 2015 : 2000 + i / 10) 
+                String date2 = "2016"
                         + "-" + (i / 10 + 2 > 12 ? 12 : i / 10 + 2) 
+                        + "-" + (i / 4 + 2 > 28 ? 28 : i / 4 + 2);
+                
+                String date3 = "2016"
+                        + "-" + (i / 10 + 3 > 12 ? 12 : i / 10 + 3) 
                         + "-" + (i / 4 + 3 > 28 ? 28 : i / 4 + 3);
                 
                 if (type.equals(DocumentType.BOOK.getName())){
@@ -297,22 +301,31 @@ public class DataBaseInitiate {
                 }
                 
                 List<String[]> BORROW_Values = new ArrayList<String[]>();
+                String user1 = String.valueOf((i + 1) % 20);
+                String user2 = String.valueOf((i + 2) % 20);
+                String user3 = String.valueOf((i + 3) % 20);
+                String user4 = String.valueOf((i + 4) % 20);
+                String user5 = String.valueOf((i + 5) % 20);
+                String user6 = String.valueOf((i + 6) % 20);
+                String lib = String.valueOf((i % 5 + 1));
                 if (i % 3 == 0){
-                    String user1 = String.valueOf(i % 20 + 1);
-                    String user2 = String.valueOf(i % 7 + 1);
-                    BORROW_Values.add(new String[]{String.valueOf(borNumber++), user1, String.valueOf(i), "1", String.valueOf(i % 3 + 1), date, date2});
-                    BORROW_Values.add(new String[]{String.valueOf(borNumber++), user2, String.valueOf(i), "2", String.valueOf((i + 1)% 3 + 1), date, date2});
-                    BORROW_Values.add(new String[]{String.valueOf(borNumber++), "5", String.valueOf(i), "3", String.valueOf((i + 2)% 3 + 1), date, date2});
-                    if (i % 11 == 0){
-                        BORROW_Values.add(new String[]{String.valueOf(borNumber++), "2", String.valueOf(i), "4", "1", date, date2});
-                        BORROW_Values.add(new String[]{String.valueOf(borNumber++), "2", String.valueOf(i), "5", "2", date, date2});
-                        BORROW_Values.add(new String[]{String.valueOf(borNumber++), "3", String.valueOf(i), "5", "1", date, date2});
-                    }
-                    
-                    BORROW_Values.add(new String[]{String.valueOf(borNumber++), "2", String.valueOf(i), "5", "3", date, date});
-                    createBORROWS.setValues(BORROW_Values);
-                    stat.executeUpdate(createBORROWS.getSQL());
+                    BORROW_Values.add(new String[]{String.valueOf(borNumber++), user1, String.valueOf(i), lib, String.valueOf(i % 3 + 1), date, date2});
+                    BORROW_Values.add(new String[]{String.valueOf(borNumber++), user2, String.valueOf(i), lib, String.valueOf((i + 1)% 3 + 1), date, date2});
+                    BORROW_Values.add(new String[]{String.valueOf(borNumber++), user3, String.valueOf(i), lib, String.valueOf((i + 2)% 3 + 1), date, date2});
                 }
+                if (i % 5 == 0){
+                    BORROW_Values.add(new String[]{String.valueOf(borNumber++), user1, String.valueOf(i), lib, String.valueOf(i % 3 + 1), date2, date3});
+                    BORROW_Values.add(new String[]{String.valueOf(borNumber++), user3, String.valueOf(i), lib, String.valueOf((i + 1)% 3 + 1), date2, date3});
+                    BORROW_Values.add(new String[]{String.valueOf(borNumber++), user5, String.valueOf(i), lib, String.valueOf((i + 2)% 3 + 1), date2, date3});
+                }
+                else if (i % 11 == 0){
+                    BORROW_Values.add(new String[]{String.valueOf(borNumber++), user2, String.valueOf(i), lib, String.valueOf(i % 3 + 1), date2, date3});
+                    BORROW_Values.add(new String[]{String.valueOf(borNumber++), user4, String.valueOf(i), lib, String.valueOf((i + 1)% 3 + 1), date2, date3});
+                    BORROW_Values.add(new String[]{String.valueOf(borNumber++), user6, String.valueOf(i), lib, String.valueOf((i + 2)% 3 + 1), date2, date3});
+                }
+                BORROW_Values.add(new String[]{String.valueOf(borNumber++), "4", String.valueOf(i), lib, "1", date, date2});
+                createBORROWS.setValues(BORROW_Values);
+                stat.executeUpdate(createBORROWS.getSQL());
                
                 createDocument.setValues(DocumentValues);
                 createCopy.setValues(Copyvalues);
