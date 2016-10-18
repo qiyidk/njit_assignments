@@ -1,0 +1,28 @@
+Insert into READER values
+     ("1", "admin", "ADMINISTRATOR", "", "NJIT", "123"),
+     ("2", "student", "Sherry", "", "NJIT", "123"),
+     ("3", "student", "Wenbin", "", "NJIT", "123"),
+     ("4", "senior_citizen", "Bill", "", "Rutgers", "123"),
+     ("5", "staff", "John", "", "Rutgers", "123"),
+     ("6", "student", "Lily1", "", "Rutgers", "123"),
+     ("7", "student", "Lily2", "", "Rutgers", "123"),
+     ("8", "student", "Lily3", "", "Rutgers", "123"),
+     ("9", "student", "Lily4", "", "Rutgers", "123"),
+     ("10", "student", "Lily5", "", "Rutgers", "123"),
+     ("11", "student", "Lily6", "", "Rutgers", "123"),
+     ("12", "student", "Lily7", "", "Rutgers", "123"),
+     ("13", "student", "Lily8", "", "Rutgers", "123"),
+     ("14", "student", "Lily9", "", "Rutgers", "123"),
+     ("15", "student", "Lily10", "", "Rutgers", "123"),
+     ("16", "student", "Lily11", "", "Rutgers", "123"),
+     ("17", "student", "Lily12", "", "Rutgers", "123"),
+     ("18", "student", "Lily13", "", "Rutgers", "123"),
+     ("19", "student", "Lily14", "", "Rutgers", "123"),
+     ("20", "student", "Lily15", "", "Rutgers", "123");
+     
+Insert into BRANCH values
+    ("1", "BRANCH1", "NEW JERSEY"),
+    ("2", "BRANCH2", "NEW YORK"),
+    ("3", "BRANCH3", "LONDON"),
+    ("4", "BRANCH4", "BEIJING"),
+    ("5", "BRANCH5", "BOSTON");
