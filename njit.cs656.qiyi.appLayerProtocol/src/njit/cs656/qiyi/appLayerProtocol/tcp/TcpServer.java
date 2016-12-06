@@ -14,14 +14,15 @@ import java.net.Socket;
  * </p>
  *
  * @author qiyi
- * @version 2015Äê10ÔÂ8ÈÕ
+ * @version 2015ï¿½ï¿½10ï¿½ï¿½8ï¿½ï¿½
  */
 public class TcpServer {
 
     public TcpServer(int port) {
         System.out.println("Server is running on port:"+port);
+        ServerSocket socket = null;
         try {
-            ServerSocket socket = new ServerSocket(port);
+            socket = new ServerSocket(port);
             while (true) {
                 Socket s = socket.accept();
                 if (s != null)
@@ -31,7 +32,14 @@ public class TcpServer {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-
+        finally{
+        	try {
+				socket.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+        }
     }
 
     private void startNewThread(Socket s) {

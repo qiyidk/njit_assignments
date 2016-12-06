@@ -13,13 +13,14 @@ import java.net.UnknownHostException;
  * </p>
  *
  * @author qiyi
- * @version 2015Äê10ÔÂ8ÈÕ
+ * @version 2015ï¿½ï¿½10ï¿½ï¿½8ï¿½ï¿½
  */
 public class TcpClient {
     
     public TcpClient(String address, int port){
 
         BufferedReader in = null;
+        Socket socket = null;
         try {
             // get information from user input
             System.out.println("Please input your request, type \"exit\" to quit");
@@ -35,7 +36,7 @@ public class TcpClient {
             // append "exit" to to let a server know the data has already been sent 
             
             // send request
-            Socket socket = new Socket(address,port);
+            socket = new Socket(address,port);
             DataOutputStream out = new DataOutputStream(socket.getOutputStream());
             out.writeBytes(input.toString());
             
@@ -53,6 +54,14 @@ public class TcpClient {
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
+        }
+        finally{
+        	try {
+				socket.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
         }
     }
 
