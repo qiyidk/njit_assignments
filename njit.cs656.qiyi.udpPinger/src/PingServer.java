@@ -6,7 +6,7 @@
  * </p>
  *
  * @author qiyi
- * @version 2015Äê10ÔÂ24ÈÕ
+ * @version 2015ï¿½ï¿½10ï¿½ï¿½24ï¿½ï¿½
  */
 import java.io.*;
 import java.net.*;
@@ -35,7 +35,8 @@ public class PingServer
 
       // Create a datagram socket for receiving and sending UDP packets
       // through the port specified on the command line.
-      DatagramSocket socket = new DatagramSocket(port);
+      @SuppressWarnings("resource")
+	  DatagramSocket socket = new DatagramSocket(port);
 
       // Processing loop.
       while (true) {

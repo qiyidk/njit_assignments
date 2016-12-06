@@ -10,7 +10,7 @@ import java.util.Date;
  * </p>
  *
  * @author qiyi
- * @version 2015Äê10ÔÂ24ÈÕ
+ * @version 2015ï¿½ï¿½10ï¿½ï¿½24ï¿½ï¿½
  */
 public class PingClinet {
 
@@ -19,9 +19,10 @@ public class PingClinet {
      */
     public static void main(String[] args) {
         // TODO Auto-generated method stub
+    	DatagramSocket socket = null;
         try{
             InetAddress address = InetAddress.getByName("localhost");
-            DatagramSocket socket = new DatagramSocket();
+            socket = new DatagramSocket();
             SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// set date format 
             for (int i = 0; i < 10; i++){
                 Date date1 = new Date();
@@ -48,6 +49,9 @@ public class PingClinet {
         }
         catch (Exception e){
             e.printStackTrace();
+        }
+        finally{
+        	socket.close();
         }
     }
 
