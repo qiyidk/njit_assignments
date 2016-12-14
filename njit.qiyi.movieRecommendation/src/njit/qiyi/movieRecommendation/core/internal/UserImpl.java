@@ -76,4 +76,8 @@ public class UserImpl implements User{
         EstimateRatings.put(movieId, rating);
     }  
     
+    public void resetEstimateRating(){
+	EstimateRatings = new HashMap<Integer, Double>();
+    }
+    
 }

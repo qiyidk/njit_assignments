@@ -37,14 +37,19 @@ public class Test {
             }
             System.out.println();
         }*/
+
         String MovieFile = "movies_test.csv";
         String ratingFile = "ratings_test.csv";
         Cross_Validation cv = new Cross_Validation(5);
         List<Movie> movieList = DataImport.readMovie(MovieFile);
         List<User> users = DataImport.readUser(ratingFile, movieList);
         List<Result> l = cv.validation(users, movieList);
-        System.out.println(l.get(0).correct());
-        System.out.println(l.get(0).accuracy());
+        System.out.printf("%-30s%-30s%-30s", "Name" , "Correct/Total" ,"Accuracy");
+	System.out.println();
+        for (Result r : l){
+            System.out.printf("%-30s%-30s%-30s", r.getName() , r.correct() + "/" +  r.size(), Math.round(r.accuracy() * 10000) * 1.0 / 100 + "%");
+            System.out.println();
+        }
     }
 
 }

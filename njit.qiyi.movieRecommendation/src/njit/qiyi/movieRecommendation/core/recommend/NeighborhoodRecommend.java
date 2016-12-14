@@ -44,13 +44,18 @@ public class NeighborhoodRecommend {
             e.printStackTrace();
         }
     }
-    public void estimateRatings(SimilarityMetric metric, List<Movie> movies, List<User> testdata, boolean adjustedRating){
+    public void estimateRatings(SimilarityMetric metric, List<Movie> movies, List<User> testdata, List<User> trainData, boolean adjustedRating){
 	ItemSimilarity similarity = getItemSimilarity(metric);
         ItemBasedRecommender recommender = new GenericItemBasedRecommender(model,
                     similarity);
         Map<Integer, Map<Integer, Double>> Similarities = new HashMap<Integer, Map<Integer, Double>>();
+        
         Map<Integer, Movie> movieMap = new HashMap<Integer, Movie>();
         for (Movie m : movies) movieMap.put(m.getID(), m);
+        
+        Map<Integer, User> trainMap = new HashMap<Integer, User>();
+        for (User u : trainData) trainMap.put(u.getUserID(), u);
+        
         for (Movie movie : movieMap.values()){
             Map<Integer, Double> similarityMap = new HashMap<Integer, Double>();
             Similarities.put(movie.getID(), similarityMap);
@@ -61,31 +66,32 @@ public class NeighborhoodRecommend {
 		}
 	    } catch (TasteException e) {
 		// TODO Auto-generated catch block
-		e.printStackTrace();
+		// e.printStackTrace();
 	    }
         }
-        
 	for (User user : testdata) {
 	    Map<Integer, Double> ratings = user.getRatings();
-	    for (Movie movie : movieMap.values()){
-		if (ratings.containsKey(movie.getID())) continue;
-		Map<Integer, Double> similarityMap = Similarities.get(movie.getID());
+	    for (int movieId : ratings.keySet()){
+		Map<Integer, Double> similarityMap = Similarities.get(movieId);
+		Movie movie = movieMap.get(movieId);
     		try {
     		    double rating = 0;
     		    double sumSimilarity = 0;
-    		    for (HashMap.Entry<Integer, Double> entry : ratings.entrySet()){
+    		    for (HashMap.Entry<Integer, Double> entry : trainMap.get(user.getUserID()).getRatings().entrySet()){
     			// predict rating = weighted (sum * avg ratio if adjusted)
     			int id = entry.getKey();
+    			if (!similarityMap.containsKey(id)) continue;
     			double r = entry.getValue();
     			double sim = similarityMap.get(id);
+    			if (sim < 0.5) continue;
     			double adjustFactor = adjustedRating ? movie.getAvgRating() / movieMap.get(id).getAvgRating() : 1;
     			sumSimilarity += sim;
     			rating += sim * r * adjustFactor;
     		    }
-    		    ((UserImpl)user).setEstimateRating(movie.getID(), rating / sumSimilarity);
+    		    ((UserImpl)user).setEstimateRating(movieId, rating / sumSimilarity);
     		} catch (Exception e) {
     		    // TODO Auto-generated catch block
-    		    e.printStackTrace();
+    		    //e.printStackTrace();
     		}
 	    }
 	}

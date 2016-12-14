@@ -1,5 +1,6 @@
 package njit.qiyi.movieRecommendation.core.internal;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
@@ -42,12 +43,11 @@ public class CSVUtil {
     }
     public static void writeData(String name, List<User> data){
 	CsvWriter writer = null;
+	name = "build/classes/" + name; 
 	try{
+	    File file = new File(name);
+	    if (file.exists()) file.delete();
 	    writer = new CsvWriter(name);
-	    writer.write("userId");
-	    writer.write("movieId");
-	    writer.write("rating");
-	    writer.endRecord();
 	    for (User user : data){
 		for (HashMap.Entry<Integer, Double> entry : user.getRatings().entrySet()){
 		    writer.write(String.valueOf(user.getUserID()));

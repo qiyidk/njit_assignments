@@ -43,7 +43,7 @@ public class LatentFactorModelRecommend {
 			((UserImpl)user).setEstimateRating(movieID, rating);
 	            } catch (Exception e) {
 	                // TODO Auto-generated catch block
-	                e.printStackTrace();
+	                //e.printStackTrace();
 	            }
 		}
 	    }
