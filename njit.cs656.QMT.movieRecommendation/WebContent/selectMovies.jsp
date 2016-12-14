@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"
-    import="njit.cs656.QMT.movieRecommendation.service.*, njit.cs656.QMT.movieRecommendation.core.*, java.util.*" 
+    import="njit.qiyi.movieRecommendation.service.*, njit.qiyi.movieRecommendation.core.*, java.util.*" 
 %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -26,6 +26,7 @@ body {
 String s = request.getParameter("radio");
 String d = request.getParameter("delete");
 String type = request.getParameter("type");
+@SuppressWarnings("unchecked") 
 Set<Integer> movies = (Set<Integer>) session.getAttribute("movieID");
 if (("Add").equals(type) && (s != null)){
     Integer movieID = Integer.parseInt(s);
