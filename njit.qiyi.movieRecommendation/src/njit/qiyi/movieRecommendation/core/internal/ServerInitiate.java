@@ -7,8 +7,10 @@ import java.util.Map;
 
 import njit.qiyi.movieRecommendation.core.Movie;
 import njit.qiyi.movieRecommendation.core.User;
+import njit.qiyi.movieRecommendation.core.recommend.Cross_Validation;
 import njit.qiyi.movieRecommendation.core.recommend.NeighborhoodRecommend;
 import njit.qiyi.movieRecommendation.core.recommend.SimilarityMetric;
+import njit.qiyi.movieRecommendation.core.service.Result;
 
 /**
  * <p>
@@ -21,8 +23,8 @@ import njit.qiyi.movieRecommendation.core.recommend.SimilarityMetric;
 public class ServerInitiate {
     private String userFile = "ratings.csv";
     private String movieFile = "movies.csv";
-    private String testUserFile = "ratings_test.csv";
-    private String movieUserFile = "movies_test.csv";
+    private String testMovieFile = "movies_test.csv";
+    private String testRatingFile = "ratings_test.csv";
     
     public void init(){
         System.out.println(new Date(System.currentTimeMillis()).toString() + ": The server is starting...");
@@ -43,7 +45,17 @@ public class ServerInitiate {
             
             if (SystemPara.cross_validation){
         	System.out.println(new Date(System.currentTimeMillis()).toString() + ": Do Cross Validation...");
-        	
+
+                Cross_Validation cv = new Cross_Validation(5);
+                List<Movie> movieList2 = DataImport.readMovie(testMovieFile);
+                List<User> users = DataImport.readUser(testRatingFile, movieList2);
+                List<Result> l = cv.validation(users, movieList2);
+                System.out.printf("%-30s%-30s%-30s", "Name" , "Correct/Total" ,"Accuracy");
+        	System.out.println();
+                for (Result r : l){
+                    System.out.printf("%-30s%-30s%-30s", r.getName() , r.correct() + "/" +  r.size(), Math.round(r.accuracy() * 10000) * 1.0 / 100 + "%");
+                    System.out.println();
+                }
             }
             System.out.println(new Date(System.currentTimeMillis()).toString() + ": Calculate movie similarity...");
             // maintain movieSimilarity  
