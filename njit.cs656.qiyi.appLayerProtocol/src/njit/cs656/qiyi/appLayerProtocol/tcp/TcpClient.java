@@ -28,7 +28,8 @@ public class TcpClient {
             String str = null;
             StringBuilder input = new StringBuilder("");
             while ((str = in.readLine()) != null){
-                if (str.equals("exit")) break;input.append(str).append("\n");
+                if (str.equals("exit")) break;
+                input.append(str).append("\n");
                 // append "\n" to let server recognize data as lines
                 
             }
